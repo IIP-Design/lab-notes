@@ -7,5 +7,3 @@ author: Bureau of Global Public Affairs (GPA) Digital Lab Team
 author_homepage: https://github.com/IIP-Design
 
 highlighter: rouge
-plugins:
-  - jekyll-inline-svg
