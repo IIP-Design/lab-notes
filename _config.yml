@@ -1,9 +1,8 @@
 title: Lab Notes Theme
+author: Bureau of Global Public Affairs (GPA) Digital Lab Team
+author_homepage: https://github.com/IIP-Design
 description: A documentation theme for GitHub Pages.
 favicon: /assets/img/favicon.ico
 logo: /assets/img/dos_seal.svg
 show_downloads: true
-author: Bureau of Global Public Affairs (GPA) Digital Lab Team
-author_homepage: https://github.com/IIP-Design
-
-highlighter: rouge
+show_nav: false
