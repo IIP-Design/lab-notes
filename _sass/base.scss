@@ -13,12 +13,12 @@ body {
 }
 
 a {
-  color: $blueBlackPearl;
+  color: $blueDark;
   font-weight: 600;
   text-decoration: none;
 
   &:hover {
-    color: $blueDark;
+    color: $blueBright;
   }
 }
 

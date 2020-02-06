@@ -1,4 +1,9 @@
-@import './colors.scss';
+@import '../colors.scss';
+@import '../typography.scss';
+
+.description {
+  text-align: center;
+}
 
 .download-link {
   align-items: center;
@@ -44,7 +49,15 @@
 }
 
 .sidebar-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: 1rem;
   position: sticky;
   top: 0;
+}
+
+.tag-line {
+  font-size: $fontSizeSmall;
+  text-align: center;
 }
