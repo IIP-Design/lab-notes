@@ -1,8 +1,9 @@
-// Base styles
+// Base styles.
 @import './base.scss';
 
 // Layout partials.
 @import './layout/default.scss';
 @import './layout/sidebar.scss';
 
-@import './rogue-atom-one-dark.scss';
+// Syntax highlighting.
+@import './rogue-solarized-dark.scss';
