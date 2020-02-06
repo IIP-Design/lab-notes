@@ -6,3 +6,8 @@ favicon: /assets/img/favicon.ico
 logo: /assets/img/dos_seal.svg
 show_downloads: true
 show_nav: false
+
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
