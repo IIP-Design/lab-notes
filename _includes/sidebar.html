@@ -14,19 +14,19 @@
       <ul class="downloads">
         <li>
           <a class="download-link" href="{{ site.github.zip_url }}">
-            <img alt="" src="/assets/img/icons/file-archive-solid.svg" class="fa-icon" />
+            <img alt="" src="{{ site.repo_name | default: '' }}/assets/img/icons/file-archive-solid.svg" class="fa-icon" />
             ZIP File
           </a>
         </li>
         <li>
           <a class="download-link" href="{{ site.github.tar_url }}">
-            <img alt="" src="/assets/img/icons/box-open-solid.svg" class="fa-icon" />
+            <img alt="" src="{{ site.repo_name | default: '' }}/assets/img/icons/box-open-solid.svg" class="fa-icon" />
             TAR Ball
           </a>
         </li>
         <li>
           <a class="download-link" href="{{ site.github.repository_url }}">
-            <img alt="" src="/assets/img/icons/github-brands.svg" class="fa-icon" />
+            <img alt="" src="{{ site.repo_name | default: '' }}/assets/img/icons/github-brands.svg" class="fa-icon" />
             GitHub
           </a>
         </li>
