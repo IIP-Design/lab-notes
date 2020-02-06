@@ -1,0 +1,28 @@
+<div class="sidebar-content">
+  {% if site.logo %}
+  <figure class="logo">
+    <img alt="" src="{{ site.logo }}" />
+  </figure>
+  {% endif %} {% if site.show_downloads %}
+
+  <ul class="downloads">
+    <li>
+      <a class="download-link" href="{{ site.github.zip_url }}">
+        {% svg "/assets/img/icons/file-archive-solid.svg" class="fa-icon" %} ZIP
+        File
+      </a>
+    </li>
+    <li>
+      <a class="download-link" href="{{ site.github.tar_url }}">
+        {% svg "/assets/img/icons/box-open-solid.svg" class="fa-icon" %} TAR
+        Ball
+      </a>
+    </li>
+    <li>
+      <a class="download-link" href="{{ site.github.repository_url }}">
+        {% svg "/assets/img/icons/github-brands.svg" class="fa-icon" %} GitHub
+      </a>
+    </li>
+  </ul>
+  {% endif %}
+</div>

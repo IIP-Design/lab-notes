@@ -1,0 +1,98 @@
+@import './colors.scss';
+@import './typography.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: $black;
+  font-family: $fontBase;
+  font-size: $fontSizeBase;
+}
+
+a {
+  color: $blueBlackPearl;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    color: $blueDark;
+  }
+}
+
+button {
+  border-radius: 5px;
+  box-shadow: $boxShadow;
+  font-size: $fontSizeSmall;
+  padding: 0.5rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $fontHeader;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: $fontSizeHuge;
+}
+
+h2 {
+  font-size: $fontSizeLarge;
+}
+
+h3 {
+  font-size: $fontSizeMediumLarge;
+}
+
+h4 {
+  font-size: $fontSizeMedium;
+}
+
+h5 {
+  font-size: $fontSizeMediumSmall;
+}
+
+h6 {
+  font-size: $fontSizeNormal;
+}
+
+header {
+  background-color: $blueBright;
+  color: $white;
+}
+
+hr {
+  border: $borderLight;
+  box-shadow: $boxShadow;
+  margin: 1rem;
+}
+
+ol,
+p,
+pre,
+table,
+ul {
+  margin: 1rem 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+pre {
+  overflow: auto;
+}
+
+strong {
+  font-weight: 600;
+}

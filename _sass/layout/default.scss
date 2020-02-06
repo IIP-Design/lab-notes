@@ -1,0 +1,22 @@
+@import './colors.scss';
+
+.container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 30% calc(70% - 2rem);
+  margin: 1rem auto;
+  max-width: 1300px;
+}
+
+.header {
+  background-color: $blueBright;
+  border-bottom: solid 7px $gold;
+}
+
+.title {
+  color: $white;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 2rem 0.5rem;
+  text-align: center;
+}

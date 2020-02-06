@@ -1,0 +1,9 @@
+title: Lab Notes Theme
+description: A documentation theme for GitHub Pages.
+favicon: /assets/img/favicon.ico
+logo: /assets/img/dos_seal.svg
+show_downloads: true
+
+highlighter: rouge
+plugins:
+  - jekyll-inline-svg
