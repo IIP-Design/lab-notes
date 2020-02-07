@@ -7,6 +7,8 @@ logo: /assets/img/dos_seal.svg
 show_downloads: true
 show_nav: false
 
+remote_theme: IIP-Design/lab-notes
+
 markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
