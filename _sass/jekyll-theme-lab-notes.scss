@@ -1,10 +1,13 @@
 // Base styles.
 @import './base.scss';
 
-// Layout partials.
+// Layout types.
 @import './layout/default.scss';
-@import './layout/nav.scss';
-@import './layout/sidebar.scss';
+@import './layout/post.scss';
+
+// Component partials.
+@import './components/nav.scss';
+@import './components/sidebar.scss';
 
 // Syntax highlighting.
 @import './atom-one-dark.scss';
