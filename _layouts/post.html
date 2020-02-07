@@ -1,7 +1,29 @@
 ---
-layout: default
+layout: base
 ---
 
-<h2>{{ post.title }}</h2>
+<main class="post-container" role="main">
+  <h2>{{ page.title }}</h2>
 
-{{ content }}
+  <div class="post-metadata">
+    {% if page.author %}
+      <p class="meta">By: {{ page.author }}</p>
+    {% endif %}
+    {% if page.date %}
+      <p class="meta">Published: {{ page.date }}</p>
+    {% endif %}
+  </div>
+
+  {{ content }}
+
+  {% if page.tags %}
+    <div class="tags-container">
+      <span class="tags-heading">Tags:</span> 
+      <ul class="tags-list" role="list">
+        {% for tag in page.tags %}
+          <li class="tag" role="listitem">{{tag}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</main>

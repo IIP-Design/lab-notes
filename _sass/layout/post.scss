@@ -1,0 +1,58 @@
+@import '../variables/colors.scss';
+@import '../variables/typography.scss';
+
+.meta {
+  font-family: $fontHeader;
+  font-size: $fontSizeSmall;
+  font-variant: small-caps;
+  font-weight: 700;
+  letter-spacing: $spacingWide;
+  margin: 0;
+}
+
+.post {
+  &-container {
+    margin: 1rem auto;
+    max-width: 1100px;
+  }
+
+  &-metadata {
+    margin: 1rem 0.5rem;
+  }
+}
+
+.tag {
+  font-size: $fontSizeSmall;
+}
+
+.tags {
+  &-container {
+    align-items: center;
+    border: $borderLight;
+    border-radius: 5px;
+    box-shadow: $boxShadow;
+    display: flex;
+    padding: 0.5rem;
+    width: fit-content;
+  }
+
+  &-heading {
+    font-size: $fontSizeSmall;
+    font-weight: 700;
+  }
+
+  &-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      padding: 0 0.5rem;
+    }
+
+    > li:not(:last-child) {
+      border-right: $border;
+    }
+  }
+}
