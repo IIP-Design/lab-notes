@@ -2,4 +2,8 @@
 .bundle
 .sass-cache
 _site
+
+# Dependencies
 Gemfile.lock
+node_modules/
+package-lock.json
