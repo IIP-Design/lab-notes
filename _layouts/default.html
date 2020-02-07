@@ -14,7 +14,13 @@
     <title>
       {{ site.title | default: site.github.repository_name }}
     </title>
-    <script src="/assets/js/bundle.js"></script>
+
+    {% if site.github.repository_name %}
+      <script src="/{{ site.github.repository_name }}/assets/js/bundle.js"></script>
+    {% else %}
+      <script src="/assets/js/bundle.js"></script>
+    {% endif %}
+    
   </head>
   <body>
     <header class="header" role="banner">
