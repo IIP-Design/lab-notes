@@ -1,40 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en-US' }}">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" href="{{ site.favicon }}" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
-    />
-    <title>
-      {{ site.title | default: site.github.repository_name }}
-    </title>
+---
+layout: base
+---
 
-    {% if site.github.repository_name %}
-      <script src="/{{ site.github.repository_name }}/assets/js/bundle.js"></script>
-    {% else %}
-      <script src="/assets/js/bundle.js"></script>
-    {% endif %}
-    
-  </head>
-  <body>
-    <header class="header" role="banner">
-      <h1 class="title">
-        {{ site.title | default: site.github.repository_name }}
-      </h1>
-    </header>
-    <article class="container">
-      <aside class="sidebar" role="complementary">
-        {% include sidebar.html %}
-      </aside>
-      <main class="content" role="main">
-        {{ content }}
-      </main>
-    </article>
-  </body>
-</html>
+<article class="container">
+  <aside class="sidebar" role="complementary">
+    {% include sidebar.html %}
+  </aside>
+  <main class="content" role="main">
+    {{ content }}
+  </main>
+</article>
