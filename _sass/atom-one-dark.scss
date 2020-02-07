@@ -82,3 +82,16 @@ pre {
 .hljs-link {
   text-decoration: underline;
 }
+
+.language-markdown,
+.language-md,
+.language-mkdown,
+.language-mkd,
+.language-nohighlight,
+.language-plaintext,
+.language-text,
+.language-txt {
+  display: block;
+  padding: 1rem;
+  white-space: pre-wrap;
+}
