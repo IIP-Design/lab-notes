@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.maintainer-credit {
+  font-size: $fontSizeSmall;
+  margin-top: 2rem;
+  text-align: center;
+
+  > p {
+    margin: 0;
+  }
+}

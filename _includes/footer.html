@@ -1,0 +1,8 @@
+<footer class="footer" role="contentinfo">
+  {% if site.author %}
+    <div class="maintainer-credit">
+      <p>This project is maintained by</p>
+      <a href="{{ site.author_homepage | default: '' }}">{{ site.author }}</a>
+    </div>
+  {% endif %}
+</footer>

@@ -2,11 +2,14 @@
 layout: base
 ---
 
-<article class="container">
+<div class="container">
   <aside class="sidebar" role="complementary">
     {% include sidebar.html %}
   </aside>
-  <main class="content" role="main">
-    {{ content }}
-  </main>
-</article>
+  <article>
+    <main class="content" role="main">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </article>
+</div>
