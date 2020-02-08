@@ -1,49 +1,24 @@
 # Lab Notes
 
-Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
+Lab Notes is the default theme for all [GPA/LAB](https://github.com/iip-design) documentation pages. It is an extensible markdown-driven Jekyll theme intended for use with GitHub Pages. It has built-in syntax highlighting and three layout options (default, page, and post). Additionally, the theme provides optional widgets for GitHub download links and navigation.
 
-To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
-
-TODO: Delete this and the text above, and describe your gem
+For full documenation or to see Lab Notes in action, take a look at our [docs page](https://iip-design.github.io/lab-notes/).
 
 ## Installation
 
-Add this line to your Jekyll site's `Gemfile`:
+When using this theme for GitHub Pages, we recommend placing all of your documentation in markdown files in a `docs` directory at the project root. Within this directory you will need a primary or entry page for your documentation called `index.md`. With this done, go to the repository's settings tab and find the GitHub Pages section:
 
-```ruby
-gem "lab-notes"
-```
+![GitHub Pages admin settings](https://iip-design.github.io/lab-notes/assets/img/github-pages-settings.png)
 
-And add this line to your Jekyll site's `_config.yml`:
+From the source dropdown choose `master branch /docs folder` and save your changes. This will build your documentation site and serve it at `https://iip-design.github.io/repo-name/`. To apply the Lab Notes theme to this new documentation site, add the following line to the `_config.yml` file now found in your `docs` directory:
 
 ```yaml
-theme: lab-notes
+remote_theme: IIP-Design/lab-notes
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install lab-notes
-
-## Usage
-
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Development
-
-To set up your environment to develop this theme, run `bundle install`.
-
-Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
-
-When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
-To add a custom directory to your theme-gem, please edit the regexp in `lab-notes.gemspec` accordingly.
+Bug reports and pull requests are welcome on our [issues page](https://github.com/IIP-Design/lab-notes/issues). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
