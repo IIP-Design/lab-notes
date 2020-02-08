@@ -15,12 +15,8 @@
       {{ site.title | default: site.github.repository_name }}
     </title>
 
-    {% if site.github.repository_name %}
-      <script src="/{{ site.github.repository_name }}/assets/js/bundle.js"></script>
-    {% else %}
-      <script src="/assets/js/bundle.js"></script>
-    {% endif %}
-    
+    <script src="{{ '/assets/js/bundle.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+
   </head>
   <body>
     <header class="header" role="banner">
