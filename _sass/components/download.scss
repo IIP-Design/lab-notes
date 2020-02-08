@@ -1,0 +1,53 @@
+.download-link {
+  align-items: center;
+  color: $greyMedium;
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+
+  &:focus {
+    color: $black;
+    font-weight: 700;
+  }
+
+  &:hover {
+    color: $black;
+    font-weight: 700;
+  }
+}
+
+.downloads {
+  border: $borderLight;
+  border-radius: 5px;
+  box-shadow: $boxShadow;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  list-style: none;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+
+  > li:hover {
+    background-color: $greyLightest;
+    margin: -0.5rem 0;
+    padding: 0.5rem 0;
+
+    &:first-of-type {
+      margin-left: -0.5rem;
+      padding-left: 0.5rem;
+    }
+
+    &:last-of-type {
+      margin-right: -0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+
+  > li:not(:last-of-type) {
+    border-right: $borderLight;
+  }
+}
+
+.fa-icon {
+  height: 1.5rem;
+  margin-bottom: 0.3rem;
+}
