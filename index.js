@@ -1,4 +1,7 @@
 import hljs from 'highlight.js/lib/highlight';
+import hljsDefineGraphQL from 'highlightjs-graphql';
+
+hljsDefineGraphQL(hljs);
 
 import apache from 'highlight.js/lib/languages/apache';
 import bash from 'highlight.js/lib/languages/bash';
