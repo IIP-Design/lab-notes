@@ -3,16 +3,23 @@ layout: base
 ---
 
 <main class="post-container" role="main">
-  <h2>{{ page.title }}</h2>
+  {% if page.title %}
+    <h2>{{ page.title }}</h2>
+  {% endif %}
+  {% if page.subtitle %}
+    <h3 class="post-subtitle">{{ page.subtitle }}</h3>
+  {% endif %}
 
-  <div class="post-metadata">
-    {% if page.author %}
-      <p class="meta">By: {{ page.author }}</p>
-    {% endif %}
-    {% if page.date %}
-      <p class="meta">Published: {{ page.date }}</p>
-    {% endif %}
-  </div>
+  {% if page.author or page.date %}
+    <div class="post-metadata">
+      {% if page.author %}
+        <p class="meta">By: {{ page.author }}</p>
+      {% endif %}
+      {% if page.date %}
+        <p class="meta">Published: {{ page.date }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
 
   {{ content }}
 
