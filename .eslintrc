@@ -1,0 +1,3 @@
+{
+  "extends": ["@gpa-lab/eslint-config"]
+}
