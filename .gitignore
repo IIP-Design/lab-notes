@@ -1,3 +1,4 @@
+# Build files
 *.gem
 .bundle
 .sass-cache
@@ -7,3 +8,6 @@ _site
 Gemfile.lock
 node_modules/
 package-lock.json
+
+# Editor settings
+.vscode/
