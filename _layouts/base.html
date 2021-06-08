@@ -26,9 +26,12 @@
   </head>
   <body>
     <header class="header" role="banner">
-      <span class="title">
-        {{ site.title | default: site.github.repository_name }}
-      </span>
+      <a class="skip" href="#main-content">Skip to main content</a>
+      <a href="{{ '/' | relative_url  }}">
+        <span class="title">
+          {{ site.title | default: site.github.repository_name }}
+        </span>
+      </a>
     </header>
     {{ content }}
   </body>

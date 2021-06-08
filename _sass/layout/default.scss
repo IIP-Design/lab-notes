@@ -21,6 +21,25 @@
   border-bottom: solid 7px $gold;
 }
 
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  background-color: $white;
+  padding: 1rem;
+
+  &:focus {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    width: auto;
+    height: auto;
+  }
+}
+
 .title {
   color: $white;
   display: block;

@@ -12,6 +12,7 @@ _This sections lists changes committed since most recent release_
 
 - A changelog page template to fetch and render a remote changelog Markdown file
 - A Changelog file to track updates to this theme
+- Skip link in header for improved accessibility
 
 ### Changed:
 
