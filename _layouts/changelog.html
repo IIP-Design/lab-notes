@@ -7,4 +7,4 @@ title: Changelog
   <div id="changelog-content" data-url="{{ page.source }}"></div>
 {% endif %}
 
-<script src="/assets/js/changelog-bundle.js"></script>
+<script src="{{ '/assets/js/changelog-bundle.js?v=' | append: site.github.build_revision | relative_url }}"></script>
