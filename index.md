@@ -71,25 +71,24 @@ To implement this navigation, add a file named `main_nav.yml` to the `_data` dir
 ```yml
 nav_title: My Contents
 nav_list:
+  # Anchor links need to be surrounded by quotation marks.
+  # Otherwise, they will be treated as comments.
+  - title: Anchor Link
+    url: '#anchor-link'
 
-# Anchor links need to be surrounded by quotation marks.
-# Otherwise, they will be treated as comments.
-- title: Anchor Link
-  url: "#anchor-link"
+  # Internal links are treated as relative URLs, and the provided URL
+  # will be appended to the doc site's base URL.
+  - title: Internal Link
+    url: internal-link
 
-# Internal links are treated as relative URLs, and the provided URL
-# will be appended to the doc site's base URL.
-- title: Internal Link
-  url: internal-link
+  # Nested internal link to pages within subdirectories are also allowed.
+  - title: Nested Internal Link
+    url: nested/internal-link
 
-# Nested internal link to pages within subdirectories are also allowed.
-- title: Nested Internal Link
-  url: nested/internal-link
-
-# Links to external sites must by prepended with the http or https protocol.
-# Otherwise, it will be treated as an internal link.
-- title: External Link
-  url: https://www.external-link.com
+  # Links to external sites must by prepended with the http or https protocol.
+  # Otherwise, it will be treated as an internal link.
+  - title: External Link
+    url: https://www.external-link.com
 ```
 
 ## Syntax Highlighting
