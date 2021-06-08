@@ -61,37 +61,39 @@ For example, to change the included page layout, you can add a file called `page
 
 ### Navigation
 
-Perhaps the most easiest and most common form of customization in Lab Notes is adding a navigation menu to the site sidebar. To do so, add a file named `navigation.html` to the `_includes` directory of your docs and set `show_nav` in you `_config.yml` file to true.
+Perhaps the easiest and most common customization in Lab Notes is adding a navigation menu to the site sidebar. The sidebar navigation is automatically generated from a provided `main_nav` data file, which lists all the desired links.
 
-In order to use the built-in styling for this navigation widget, use the below template for `navigation.html`:
+To implement this navigation, add a file named `main_nav.yml` to the `_data` directory of your docs. Within `_data/main_nav.yml`, add an field called `nav_list`, under which you will list all the nave entries. Each nav entry should have a title and a URL. URLs can be anchor tags, internal links to other pages in the docs site, or links to external resources. By default, the navigation section will be titled `Contents`, but this can be changed by adding a `nav_title` entry to the `_data/main_nav.yml`. Finally, to display the sidebar navigation, set `show_nav` to `true` in your `_config.yml` file.
 
-```html
-<div class="nav-container">
-  <p class="nav-header">Contents</p>
-  <nav role="navigation">
-    <ul class="nav" role="list">
-      <li class="nav-item" role="listitem">
-        <a href="#anchor-link">Anchor Link</a>
-      </li>
-      <li class="nav-item" role="listitem">
-        <a href="{{ page1 | relative_url }}">Page 1</a>
-      </li>
-      <li class="nav-item" role="listitem">
-        <a href="{{ site.github.url }}/page2">Page 2</a>
-      </li>
-      <li class="nav-item" role="listitem">
-        <a href="www.external-link.com">External</a>
-      </li>
-    </ul>
-  </nav>
-</div>
+**Example main_nav.yml:**
+
+```yml
+nav_title: My Contents
+nav_list:
+
+# Anchor links need to be surrounded by quotation marks.
+# Otherwise, they will be treated as comments.
+- title: Anchor Link
+  url: "#anchor-link"
+
+# Internal links are treated as relative URLs, and the provided URL
+# will be appended to the doc site's base URL.
+- title: Internal Link
+  url: internal-link
+
+# Nested internal link to pages within subdirectories are also allowed.
+- title: Nested Internal Link
+  url: nested/internal-link
+
+# Links to external sites must by prepended with the http or https protocol.
+# Otherwise, it will be treated as an internal link.
+- title: External Link
+  url: https://www.external-link.com
 ```
-
-As you can see from the example above, any sort of link can be used in the navigation including anchor links, relative URLs, and absolute URLs.
 
 ### Syntax Highlighting
 
-Lab Notes provides syntax highlighting powered by [highlight.js](https://highlightjs.org/). Syntax highlighting is invoked by surrounding a block of text with three backticks (```) and can be further augmented by tagging the first set of backticks with the target language. For example, to add a JavaScript code block you could write:
+Lab Notes provides syntax highlighting powered by [highlight.js](https://highlightjs.org/). Syntax highlighting is invoked by surrounding a block of text with three back ticks (```) and can be further augmented by tagging the first set of back ticks with the target language. For example, to add a JavaScript code block you could write:
 
 ````md
 ```javascript

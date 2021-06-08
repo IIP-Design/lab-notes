@@ -1,0 +1,12 @@
+<div class="nav-container">
+  <p class="nav-header">{{ site.data.main_nav.nav_title | default: "Contents" }}</p>
+  <nav role="navigation">
+    <ul class="nav" role="list">
+      {% for item in site.data.main_nav.nav_list %}
+        <li class="nav-item" role="listitem">
+          <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
