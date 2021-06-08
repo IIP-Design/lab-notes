@@ -1,4 +1,4 @@
-import hljs from 'highlight.js/lib/highlight';
+import hljs from 'highlight.js/lib/core';
 import hljsDefineGraphQL from 'highlightjs-graphql';
 
 import apache from 'highlight.js/lib/languages/apache';

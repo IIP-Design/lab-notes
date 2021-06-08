@@ -3,37 +3,45 @@
   "version": "1.0.0",
   "description": "A documentation theme for GitHub Pages.",
   "main": "index.js",
+  "license": "MIT",
+  "author": "U.S. Department of State, Bureau of Global Public Affairs Digital Lab <gpa-lab@america.gov>",
+  "contributors": [
+    {
+      "name": "Marek Rewers"
+    }
+  ],
+  "keywords": [
+    "jekyll",
+    "theme",
+    "gh-pages"
+  ],
   "scripts": {
     "build": "webpack --mode production"
   },
+  "dependencies": {
+    "highlight.js": "^11.0.1",
+    "highlightjs-graphql": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@gpa-lab/eslint-config": "^1.4.1",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.28.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jest": "^24.3.6",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^27.0.4",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "browserslist": "> 0.25%, not dead",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IIP-Design/lab-notes.git"
   },
-  "keywords": [
-    "jekyll",
-    "theme"
-  ],
-  "author": "Marek Rewers, U.S. Department of State, GPA/LAB",
-  "license": "MIT",
-  "browserslist": "> 0.25%, not dead",
+  "homepage": "https://github.com/IIP-Design/lab-notes#readme",
   "bugs": {
     "url": "https://github.com/IIP-Design/lab-notes/issues"
-  },
-  "homepage": "https://github.com/IIP-Design/lab-notes#readme",
-  "dependencies": {
-    "highlight.js": "^9.18.1",
-    "highlightjs-graphql": "^1.0.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.10.2",
-    "@babel/preset-env": "^7.10.2",
-    "@gpa-lab/eslint-config": "^1.2.2",
-    "babel-loader": "^8.1.0",
-    "eslint": "^7.2.0",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jest": "^23.13.2",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
   }
 }
