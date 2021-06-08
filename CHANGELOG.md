@@ -24,7 +24,7 @@ _This sections lists changes committed since most recent release_
 
 - Update Ruby and JavaScript dependencies
 
-## [v1.2.0](https://github.com/IIP-Design/lab-notes/compare/v1.0.0...v1.1.0) - 2020.06.16
+## [v1.1.0](https://github.com/IIP-Design/lab-notes/compare/v1.0.0...v1.1.0) - 2020.06.16
 
 ### Added:
 
