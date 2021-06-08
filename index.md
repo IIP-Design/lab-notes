@@ -27,8 +27,8 @@ There are several configuration options built into the theme, specifically:
 - **author**: Identifies the project maintainer in the "This project is maintained by..." line at the bottom of the page. If left blank, the project maintainer credit line will not be included.
 - **author_homepage**: A link to the maintainer's homepage (or any other site) that is used to hyperlink the author name in the maintainer credit line.
 - **description**: A description of the of the project/site. This is included near the top of the sidebar below the site logo. Omitted if left blank.
-- **favicon**: Path to an image to use for the site's favicon. It can be a relative or absolute path. Note that when using relative paths on GitHub Pages the base url is `https://user-name.github.io`. Omitted if left blank.
-- **logo**: Path to an image to use for the site's logo, which appears at the top of the sidebar. It can be a relative or absolute path. As with the favicon, on GitHub Pages the base url is `https://user-name.github.io`.
+- **favicon**: Path to an image to use for the site's favicon. It can be a relative or absolute path. Note that when using relative paths on GitHub Pages the base url is `https://user-name.github.io`. Will default to the State Department seal if left blank.
+- **logo**: Path to an image to use for the site's logo, which appears at the top of the sidebar. It can be a relative or absolute path. As with the favicon, on GitHub Pages the base url is `https://user-name.github.io`. Will default to the State Department seal if left blank. If you want to remove the logo entirely, set logo to `false`.
 - **show_downloads**: For hosting on GitHub Pages. If set to true, this will add a widget to the sidebar with download links for .zip and .tar releases of the hosting repository as well as a link to the repository page on GitHub.
 - **show_nav**: Used in conjunction with a `navigation.html` file (see the [Navigation section](#navigation) below) to add a navigation menu widget to the page sidebar.
 
@@ -39,8 +39,8 @@ title: My Project
 author: My Name
 author_homepage: https://github.com/my-name/
 description: Documentation for My Project, a project that does something cool.
-favicon: /my-project/assets/img/favicon.ico
-logo: /my-project/assets/img/logo.svg
+favicon: /my-project/assets/my-favicon.ico
+logo: /my-project/assets/my-logo.svg
 show_downloads: true
 show_nav: true
 ```
