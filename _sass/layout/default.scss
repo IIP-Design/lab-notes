@@ -23,6 +23,10 @@
 
 .title {
   color: $white;
+  display: block;
+  font-family: $fontHeader;
+  font-size: $fontSizeHuge;
+  font-weight: normal;
   margin: 0 auto;
   max-width: 1300px;
   padding: 2rem 1rem;

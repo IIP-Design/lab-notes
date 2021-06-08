@@ -50,27 +50,27 @@ h4,
 h5 {
   font-family: $fontHeader;
   font-weight: normal;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 h1 {
-  font-size: $fontSizeHuge;
-}
-
-h2 {
   font-size: $fontSizeLarge;
 }
 
-h3 {
+h2 {
   font-size: $fontSizeMediumLarge;
 }
 
-h4 {
+h3 {
   font-size: $fontSizeMedium;
 }
 
-h5 {
+h4 {
   font-size: $fontSizeMediumSmall;
+}
+
+h5 {
+  font-size: $fontSizeNormal;
 }
 
 h6 {
@@ -104,7 +104,7 @@ ol,
 p,
 pre,
 ul {
-  margin: 1rem 0 1rem 0.5rem;
+  margin: 1.5rem 0 2rem 0.5rem;
 }
 
 strong {

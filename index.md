@@ -3,11 +3,11 @@ title: About This Theme
 layout: default
 ---
 
-## About This Theme
+# About This Theme
 
 Lab Notes is the default theme for all [GPA/LAB](https://github.com/iip-design) documentation pages. It is an extensible markdown-driven Jekyll theme intended for use with GitHub Pages. It has built-in syntax highlighting and three layout options (default, page, and post). Additionally, the theme provides optional widgets for GitHub download links and navigation.
 
-### Installation
+## Installation
 
 When using this theme for GitHub Pages, we recommend placing all of your documentation in markdown files in a `docs` directory at the project root. Within this directory you will need a primary or entry page for your documentation called `index.md`. With this done, go to the repository's settings tab and find the GitHub Pages section:
 
@@ -19,7 +19,7 @@ From the source dropdown choose `master branch /docs folder` and save your chang
 remote_theme: IIP-Design/lab-notes
 ```
 
-### Configuration
+## Configuration
 
 There are several configuration options built into the theme, specifically:
 
@@ -45,7 +45,7 @@ show_downloads: true
 show_nav: true
 ```
 
-### Layouts
+## Layouts
 
 There are four layouts included in Lab Notes:
 
@@ -54,13 +54,13 @@ There are four layouts included in Lab Notes:
 1. **Post:** The post format is intended more for blog post-style content. It eliminates the sidebar element found on pages to provide more space for textual content. Like the page format, it has a title field that is populated by a `title` value in the post's frontmatter. It also includes `author`, `date`, and `tags` values that can also be populated in the post's frontmatter. To identify a markdown file as a post, add `layout: post` to the file's frontmatter.
 1. **Changelog:** The changelog format is designed to fetch and render the Markdown content from a remote changelog file. To identify a markdown file as a changelog, add `layout: changelog` and set the `source` to the target changelog's raw GitHub content URL in the file's frontmatter. For example, in this repo the you would add `source: https://raw.githubusercontent.com/IIP-Design/lab-notes/main/CHANGELOG.md`
 
-### Customization
+## Customization
 
 Beyond the base configuration options [discussed above](#configuration), Lab Notes - like all Jekyll themes - can be customized for your site. Any core theme file can be replaced by an equivalent file locally.
 
 For example, to change the included page layout, you can add a file called `page.html` to a `_layouts` at the root of your docs. This will override the equivalent file from the theme.
 
-### Navigation
+## Navigation
 
 Perhaps the easiest and most common customization in Lab Notes is adding a navigation menu to the site sidebar. The sidebar navigation is automatically generated from a provided `main_nav` data file, which lists all the desired links.
 
@@ -92,7 +92,7 @@ nav_list:
   url: https://www.external-link.com
 ```
 
-### Syntax Highlighting
+## Syntax Highlighting
 
 Lab Notes provides syntax highlighting powered by [highlight.js](https://highlightjs.org/). Syntax highlighting is invoked by surrounding a block of text with three back ticks (```) and can be further augmented by tagging the first set of back ticks with the target language. For example, to add a JavaScript code block you could write:
 
@@ -137,7 +137,7 @@ kramdown:
     disable: true
 ```
 
-### Development
+## Development
 
 Clone the repository to your local machine by running the command `git clone git@github.com:IIP-Design/lab-notes.git`.
 
