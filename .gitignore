@@ -4,6 +4,9 @@
 .sass-cache
 _site
 
+# Cache
+.jekyll-cache/
+
 # Dependencies
 Gemfile.lock
 node_modules/
