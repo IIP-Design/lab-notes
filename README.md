@@ -8,7 +8,7 @@ For full documenation or to see Lab Notes in action, take a look at our [docs pa
 
 When using this theme for GitHub Pages, we recommend placing all of your documentation in markdown files in a `docs` directory at the project root. Within this directory you will need a primary or entry page for your documentation called `index.md`. With this done, go to the repository's settings tab and find the GitHub Pages section:
 
-![GitHub Pages admin settings](https://iip-design.github.io/lab-notes/assets/img/github-pages-settings.png)
+![GitHub Pages admin settings](/assets/img/github-pages-settings.png)
 
 From the source dropdown choose `master branch /docs folder` and save your changes. This will build your documentation site and serve it at `https://iip-design.github.io/repo-name/`. To apply the Lab Notes theme to this new documentation site, add the following line to the `_config.yml` file now found in your `docs` directory:
 
