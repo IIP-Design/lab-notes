@@ -146,6 +146,6 @@ With this done, you can test the theme by running `bundle exec jekyll serve`, wh
 
 When the theme is released, only the files in `_layouts`, `_includes`, `_sass`, and `assets` tracked with Git will be bundled. To add a custom directory to the theme-gem, edit the regexp in `lab-notes.gemspec` accordingly.
 
-The JavaScript used by Lab Notes is compiled into a single bundle using Webpack. To add to this bundle, import your JavaScript into the `index.js` file at the project root and recompile the bundle by running `npm run build`.
+The JavaScript used by Lab Notes is compiled into a single bundle using Webpack. To add to this bundle, import your JavaScript into the `js/index.js` file at the project root and recompile the bundle by running `npm run build`.
 
 For more information on Jekyll themes and their development, please refer to the [Jekyll docs](https://jekyllrb.com/docs/themes/).
