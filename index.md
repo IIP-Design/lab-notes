@@ -47,11 +47,12 @@ show_nav: true
 
 ### Layouts
 
-There are three layouts included in Lab Notes:
+There are four layouts included in Lab Notes:
 
 1. **Default:** This is the base format as seen on this page, with a two column format - a sidebar with navigation and a main section for content. To identify a markdown file as a post, add `layout: default` to the file's frontmatter.
 1. **Page:** The page format only differs from the default format in that it has a title field that can be populated using the `title` value in the post's frontmatter. To identify a markdown file as a post, add `layout: page` to the file's frontmatter.
 1. **Post:** The post format is intended more for blog post-style content. It eliminates the sidebar element found on pages to provide more space for textual content. Like the page format, it has a title field that is populated by a `title` value in the post's frontmatter. It also includes `author`, `date`, and `tags` values that can also be populated in the post's frontmatter. To identify a markdown file as a post, add `layout: post` to the file's frontmatter.
+1. **Changelog:** The changelog format is designed to fetch and render the Markdown content from a remote changelog file. To identify a markdown file as a changelog, add `layout: changelog` and set the `source` to the target changelog's raw GitHub content URL in the file's frontmatter. For example, in this repo the you would add `source: https://raw.githubusercontent.com/IIP-Design/lab-notes/main/CHANGELOG.md`
 
 ### Customization
 

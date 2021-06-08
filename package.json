@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "highlight.js": "^11.0.1",
-    "highlightjs-graphql": "^1.0.2"
+    "highlightjs-graphql": "^1.0.2",
+    "remarkable": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
