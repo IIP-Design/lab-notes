@@ -8,7 +8,12 @@
       {{ site.title | default: site.github.repository_name }}
     </title>
 
-    <link rel="icon" href="{{ site.favicon }}" />
+    {% if site.favicon %}
+      <link rel="icon" href="{{ site.favicon }}" />
+    {% else %}
+      <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" />
+    {% endif %}
+
     <link
       rel="stylesheet"
       type="text/css"

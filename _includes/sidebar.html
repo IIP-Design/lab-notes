@@ -1,10 +1,12 @@
 <div class="sidebar-content">
   <div>
-    {% if site.logo %}
-      <figure class="logo">
+    <figure class="logo">
+      {% if site.logo %}
         <img alt="" src="{{ site.logo }}" />
-      </figure>
-    {% endif %}
+      {% else %}
+        <img alt="" src="{{ '/assets/img/dos_seal.svg' | relative_url }}" />
+      {% endif %}
+    </figure>
 
     {% if site.description %}
       <p class="description">{{ site.description }}</p>

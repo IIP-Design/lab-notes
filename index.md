@@ -11,7 +11,7 @@ Lab Notes is the default theme for all [GPA/LAB](https://github.com/iip-design) 
 
 When using this theme for GitHub Pages, we recommend placing all of your documentation in markdown files in a `docs` directory at the project root. Within this directory you will need a primary or entry page for your documentation called `index.md`. With this done, go to the repository's settings tab and find the GitHub Pages section:
 
-![GitHub Pages admin settings](https://iip-design.github.io/lab-notes/assets/img/github-pages-settings.png)
+![GitHub Pages admin settings]({{ '/assets/img/github-pages-settings.png' | relative_url }})
 
 From the source dropdown choose `master branch /docs folder` and save your changes. This will build your documentation site and serve it at `https://iip-design.github.io/repo-name/`. To apply the Lab Notes theme to this new documentation site, add the following line to the `_config.yml` file now found in your `docs` directory:
 
@@ -30,7 +30,7 @@ There are several configuration options built into the theme, specifically:
 - **favicon**: Path to an image to use for the site's favicon. It can be a relative or absolute path. Note that when using relative paths on GitHub Pages the base url is `https://user-name.github.io`. Omitted if left blank.
 - **logo**: Path to an image to use for the site's logo, which appears at the top of the sidebar. It can be a relative or absolute path. As with the favicon, on GitHub Pages the base url is `https://user-name.github.io`.
 - **show_downloads**: For hosting on GitHub Pages. If set to true, this will add a widget to the sidebar with download links for .zip and .tar releases of the hosting repository as well as a link to the repository page on GitHub.
-- **show_nav**: Used in conjuction with a `navigation.html` file (see the [Navigation section](#navigation) below) to add a navigation menu widget to the page sidebar.
+- **show_nav**: Used in conjunction with a `navigation.html` file (see the [Navigation section](#navigation) below) to add a navigation menu widget to the page sidebar.
 
 These configurations should be set in the `_config.yml` at the root of your `docs` directory, and will look something like this:
 
@@ -55,7 +55,7 @@ There are three layouts included in Lab Notes:
 
 ### Customization
 
-Beyond the base configuration options [discussed above](#configuration), Lab Notes - like all Jekyll themes - can be customized for your site. Any core theme file can be replaced by an equivalant file locally.
+Beyond the base configuration options [discussed above](#configuration), Lab Notes - like all Jekyll themes - can be customized for your site. Any core theme file can be replaced by an equivalent file locally.
 
 For example, to change the included page layout, you can add a file called `page.html` to a `_layouts` at the root of your docs. This will override the equivalent file from the theme.
 
