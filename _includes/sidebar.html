@@ -3,7 +3,7 @@
     {% if site.logo != false %}
       <figure class="logo">
         {% if site.logo %}
-          <img alt="" src="{{ site.logo }}" />
+          <img alt="" src="{{ site.logo | relative_url }}" />
         {% else %}
           <img alt="" src="{{ '/assets/img/dos_seal.svg' | relative_url }}" />
         {% endif %}

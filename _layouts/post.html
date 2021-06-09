@@ -20,7 +20,7 @@ layout: base
 
   {{ content }}
 
-  {% if page.tags and page.tags != "" %}
+  {% if page.tags != empty %}
     <div class="tags-container">
       <span class="tags-heading">Tags:</span> 
       <ul class="tags-list" role="list">
