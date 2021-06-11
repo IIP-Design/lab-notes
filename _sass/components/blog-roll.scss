@@ -1,0 +1,57 @@
+@import '../variables/colors.scss';
+
+.blog-roll {
+  display: grid;
+  list-style: none;
+  padding: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+
+  &-item {
+    border: 1px solid #dadada;
+    border-radius: 5px;
+    box-shadow: $boxShadow;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  &-image {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: $greyMediumLight;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70px;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &-image-credit {
+    visibility: hidden;
+  }
+
+  &-meta {
+    margin-top: 1rem;
+  }
+
+  &-tags {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0.5rem 0 1rem;
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    > li {
+      padding: 0 0.5rem;
+    }
+
+    > li:not(:last-child) {
+      border-right: $border;
+    }
+  }
+}
