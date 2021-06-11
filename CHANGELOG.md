@@ -16,6 +16,7 @@ _This sections lists changes committed since most recent release_
 - Skip link in header for improved accessibility
 - Link underline and hover effect within page and post content
 - A Changelog file to track updates to this theme
+- Styling for blockquote elements
 
 ### Changed:
 

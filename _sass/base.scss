@@ -22,6 +22,18 @@ a {
   }
 }
 
+blockquote {
+  background: $greyLightest;
+  border-left: 0.5rem solid $blueBright;
+  box-shadow: $boxShadow;
+  margin: 1.5rem;
+  padding: 0.5rem 1rem;
+
+  > p {
+    margin: 1rem;
+  }
+}
+
 button {
   border-radius: 5px;
   box-shadow: $boxShadow;
