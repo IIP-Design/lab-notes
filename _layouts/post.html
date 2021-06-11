@@ -10,10 +10,13 @@ layout: base
     <h2 class="post-subtitle">{{ page.subtitle }}</h2>
   {% endif %}
 
-  {% if page.author %}
+  {% if page.author or page.published %}
     <div class="post-metadata">
       {% if page.author %}
         <p class="meta">By: {{ page.author }}</p>
+      {% endif %}
+      {% if page.published %}
+        <p class="meta">Published: {{ page.published }}</p>
       {% endif %}
     </div>
   {% endif %}
