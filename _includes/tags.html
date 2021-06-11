@@ -1,0 +1,8 @@
+<div class="tags-container">
+  <span class="tags-heading">{{ include.heading | default: "Tags:"}}</span> 
+  <ul class="tags-list" role="list">
+    {% for tag in page.tags %}
+      <li class="tag" role="listitem">{{tag}}</li>
+    {% endfor %}
+  </ul>
+</div>

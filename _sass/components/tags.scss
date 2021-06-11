@@ -1,0 +1,36 @@
+.tag {
+  font-size: $fontSizeSmall;
+}
+
+.tags {
+  &-container {
+    align-items: center;
+    border: $borderLight;
+    border-radius: 5px;
+    box-shadow: $boxShadow;
+    display: flex;
+    margin: 2rem 0.5rem 1rem;
+    padding: 0.5rem;
+    width: fit-content;
+  }
+
+  &-heading {
+    font-size: $fontSizeSmall;
+    font-weight: 700;
+  }
+
+  &-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    > li {
+      padding: 0 0.5rem;
+    }
+
+    > li:not(:last-child) {
+      border-right: $border;
+    }
+  }
+}
