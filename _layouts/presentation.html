@@ -1,0 +1,15 @@
+---
+layout: page
+---
+
+{% if page.description %}
+  <p class="presentation-description">
+    {{ page.description }}
+  </p>
+{% endif %}
+
+<div class="presentation-embed">
+  {% pdf {{ page.file | relative_url }} no_link %}
+</div>
+
+{{ content }}
