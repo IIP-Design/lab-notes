@@ -10,14 +10,18 @@ _This sections lists changes committed since most recent release_
 
 ### Added:
 
-- A changelog page template to fetch and render a remote changelog Markdown file
-- A Changelog file to track updates to this theme
+- A changelog layout to fetch and render a remote changelog Markdown file
+- A presentation layout to embed PowerPoint and PDF files
+- A blog roll component
 - Skip link in header for improved accessibility
+- Link underline and hover effect within page and post content
+- A Changelog file to track updates to this theme
 
 ### Changed:
 
 - Use data files to dynamically generate navigation sidebar rather than requiring an `_includes` override
 - Make logo and favicon relative URLs and default to those found in the assets directory
+- Extracted the tag lists from the post layout into a reusable component
 - Updated the theme documentation
 
 ### Security:

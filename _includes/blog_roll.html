@@ -2,12 +2,14 @@
   {% for item in collection %}
     <li class="blog-roll-item">
       {% assign bg_img = item.image | default: "/assets/img/generic-background.jpg" | relative_url %}
-      <div class="blog-roll-image" style="background-image: url( {{bg_img}} );">
-        {% if item.image_credit %}
-          <p class="blog-roll-image-credit">{{ item.image_credit }}</p>
-        {% endif %}
-      </div>
-      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+      <a class="blog-roll-link" href="{{ item.url | relative_url }}">
+        <div class="blog-roll-image" style="background-image: url( {{bg_img}} );">
+          {% if item.image_credit %}
+            <p class="blog-roll-image-credit">{{ item.image_credit }}</p>
+          {% endif %}
+        </div>
+        {{ item.title }}
+      </a>
       {% if item.tags != empty %}
         <div class="blog-roll-meta">
           <small>
