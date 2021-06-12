@@ -13,5 +13,4 @@ kramdown:
     disable: true
 
 plugins:
-  - jekyll-pdf-embed
   - jemoji

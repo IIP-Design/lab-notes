@@ -8,8 +8,15 @@ layout: post
   </p>
 {% endif %}
 
-<div class="presentation-embed">
-  {% pdf {{ page.file | relative_url }} no_link %}
+{% if page.type == 'ppt' or page.type == 'pptx' %}
+  {% assign src = "https://view.officeapps.live.com/op/embed.aspx?src=" | append: page.file %}
+{% else %}
+  {% assign src = page.file %}
+{% endif %}
+
+<div class="presentation-embed {{ page.type }}">
+  <iframe src="{{ src }}" frameborder="0" allowfullscreen>
+  </iframe>
 </div>
 
 {{ content }}
