@@ -7,6 +7,15 @@ show_nav: true
 
 remote_theme: IIP-Design/lab-notes
 
+exclude:
+  - "*.gemspec"
+  - "CHANGELOG.md"
+  - "LICENSE.txt"
+  - "README.md"
+  - "package*.json"
+  - "webpack.config.js"
+  - "js/"
+
 markdown: kramdown
 kramdown:
   syntax_highlighter_opts:
