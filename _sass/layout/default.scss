@@ -14,29 +14,30 @@
 
 .content {
   margin: 0 1rem;
+}
 
-  a:not(.blog-roll-link) {
-    position: relative;
-    overflow: hidden;
+.content a:not(.blog-roll-link),
+.post-container a:not(.blog-roll-link) {
+  position: relative;
+  overflow: hidden;
 
-    &::after {
-      content: '';
-      background: rgba($gold, 0.5);
-      position: absolute;
-      left: 0;
-      bottom: -2px;
-      width: 100%;
-      height: 5px;
-      z-index: -1;
-      transition: 0.5s cubic-bezier(0.25, 0.1, 0, 2.05);
-    }
+  &::after {
+    content: '';
+    background: rgba($gold, 0.5);
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 5px;
+    z-index: -1;
+    transition: 0.5s cubic-bezier(0.25, 0.1, 0, 2.05);
+  }
 
-    &:hover:after {
-      left: -2px;
-      bottom: -2px;
-      width: calc(100% + 4px);
-      height: calc(100% + 2px);
-    }
+  &:hover:after {
+    left: -2px;
+    bottom: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 2px);
   }
 }
 
