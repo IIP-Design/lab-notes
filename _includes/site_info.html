@@ -1,0 +1,13 @@
+{% if site.logo != false %}
+  <figure class="site-logo">
+    {% if site.logo %}
+      <img alt="" src="{{ site.logo | relative_url }}"/>
+    {% else %}
+      <img alt="" src="{{ '/assets/img/dos_seal.svg' | relative_url }}"/>
+    {% endif %}
+  </figure>
+{% endif %}
+
+{% if site.description %}
+  <p class="site-description">{{ site.description }}</p>
+{% endif %}

@@ -1,17 +1,7 @@
 <div class="sidebar-content">
-  {% if site.logo != false %}
-    <figure class="logo">
-      {% if site.logo %}
-        <img alt="" src="{{ site.logo | relative_url }}"/>
-      {% else %}
-        <img alt="" src="{{ '/assets/img/dos_seal.svg' | relative_url }}"/>
-      {% endif %}
-    </figure>
-  {% endif %}
-
-  {% if site.description %}
-    <p class="description">{{ site.description }}</p>
-  {% endif %}
+  <div class="sidebar-site-info">
+    {% include site_info.html %}
+  </div>
 
   <div class="sidebar-sticky">
     {% if site.show_nav and site.data.main_nav %}
