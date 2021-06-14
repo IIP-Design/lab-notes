@@ -16,7 +16,8 @@
     "gh-pages"
   ],
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "dev": "webpack -w --mode development"
   },
   "dependencies": {
     "highlight.js": "^11.0.1",
