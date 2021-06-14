@@ -19,22 +19,32 @@
   }
 
   &-item {
-    font-size: $fontSizeSmall;
     padding: 0.5rem 1rem;
+  }
+
+  &-item,
+  &-subitem {
+    font-size: $fontSizeSmall;
 
     > a {
       color: $black;
       font-weight: normal;
-    }
 
-    &:hover {
-      background-color: $greyLightest;
-
-      > a {
+      &:hover {
         color: $blueDark;
         font-weight: 700;
       }
     }
+
+    &:hover {
+      background-color: $greyLightest;
+    }
+  }
+
+  &-subitems {
+    list-style-type: '-  ';
+    margin: 0;
+    padding-left: 1.5rem;
   }
 
   > li {
