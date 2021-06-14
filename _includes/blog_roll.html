@@ -10,8 +10,8 @@
         </div>
         {{ item.title }}
       </a>
-      {% if item.tags != empty %}
-        <div class="blog-roll-meta">
+      <div class="blog-roll-meta">
+        {% if item.tags != empty %}
           <small>
             {% if item.tags.size == 1 %}
               <strong>Topic:</strong>
@@ -24,8 +24,8 @@
               <li class="tag" role="listitem">{{tag}}</li>
             {% endfor %}
           </ul>
-        </div>
-      {% endif %}
+        {% endif %}
+      </div>
     </li>
   {% endfor %}
 </ul>

@@ -2,10 +2,19 @@
 
 .blog-roll {
   display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  justify-items: center;
   list-style: none;
   padding: 0;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 
   &-item {
     border: 1px solid #dadada;
@@ -13,6 +22,7 @@
     box-shadow: $boxShadow;
     display: flex;
     flex-direction: column;
+    max-width: 525px;
     padding: 0.5rem;
     text-align: center;
   }
@@ -35,13 +45,13 @@
   }
 
   &-meta {
-    margin-top: 1rem;
+    margin: 1rem 0;
   }
 
   &-tags {
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0.5rem 0 1rem;
+    margin: 0.5rem 0 0;
     display: flex;
     list-style: none;
     padding: 0;

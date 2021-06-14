@@ -4,6 +4,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  grid-template-rows: repeat(auto-fill, minmax(0, 1fr));
 
   @media screen and (min-width: $tablet) {
     display: grid;

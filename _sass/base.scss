@@ -6,10 +6,15 @@
   margin: 0;
 }
 
+html {
+  min-height: 100%;
+}
+
 body {
   color: $black;
   font-family: $fontBase;
   font-size: $fontSizeBase;
+  min-height: 100vh;
 }
 
 a {
