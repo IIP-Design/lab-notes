@@ -149,3 +149,12 @@ th {
   background-color: $greyLightest;
   text-align: left;
 }
+
+.btn {
+  background-color: #002d74;
+  border: none;
+  border-radius: 5px;
+  box-shadow: $boxShadow;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+}

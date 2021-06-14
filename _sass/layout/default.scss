@@ -2,16 +2,16 @@
 @import '../variables/colors.scss';
 
 .container {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 250px minmax(0, 1100px);
-  grid-template-areas:
-    'sidebar content'
-    'sidebar footer';
+  display: flex;
+  flex-direction: column;
 
-  @media screen and (max-width: $tablet) {
-    display: flex;
-    flex-direction: column;
+  @media screen and (min-width: $tablet) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 250px minmax(0, 1100px);
+    grid-template-areas:
+      'sidebar content'
+      'sidebar footer';
   }
 }
 

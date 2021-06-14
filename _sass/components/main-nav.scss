@@ -2,20 +2,23 @@
 @import '../variables/typography.scss';
 
 .nav {
-  list-style: none;
-  padding: 0;
-  line-height: 1.5rem;
-  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
 
   &-header {
     background-color: $blueBright;
     color: $white;
+    display: none;
     font-family: $fontHeader;
     font-size: $fontSizeMediumSmall;
     font-weight: 600;
     border-bottom: $borderLight;
     margin: 0;
     padding: 1rem;
+
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
   }
 
   &-item {
@@ -24,7 +27,7 @@
 
   &-item,
   &-subitem {
-    font-size: $fontSizeSmall;
+    font-size: $fontSizeNormal;
 
     > a {
       color: $black;
@@ -39,6 +42,26 @@
     &:hover {
       background-color: $greyLightest;
     }
+
+    @media screen and (min-width: $tablet) {
+      font-size: $fontSizeSmall;
+    }
+  }
+
+  &-list {
+    display: none;
+    line-height: 1.5rem;
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+
+    > li {
+      border-bottom: $borderLight;
+    }
   }
 
   &-subitems {
@@ -47,7 +70,13 @@
     padding-left: 1.5rem;
   }
 
-  > li {
-    border-bottom: $borderLight;
+  &-toggle {
+    border-radius: 0;
+    display: block;
+    font-size: $fontSizeNormal;
+
+    @media screen and (min-width: $tablet) {
+      display: none;
+    }
   }
 }

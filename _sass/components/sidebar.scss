@@ -3,12 +3,25 @@
 @import '../variables/typography.scss';
 
 .sidebar {
-  border-right: $borderLight;
-  box-shadow: $boxShadow;
   grid-area: sidebar;
+
+  @media screen and (min-width: $tablet) {
+    border-right: $borderLight;
+    box-shadow: $boxShadow;
+  }
 
   &-content {
     height: 100%;
+  }
+
+  &-downloads {
+    border-bottom: $borderLight;
+    display: none;
+    padding: 0 0 1rem;
+
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
   }
 
   &-site-info {
@@ -23,5 +36,9 @@
   &-sticky {
     position: sticky;
     top: 0;
+
+    @media screen and (min-width: $tablet) {
+      margin-top: 1rem;
+    }
   }
 }

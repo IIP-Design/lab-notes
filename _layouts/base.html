@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: 'en-US' }}">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
     <title>
       {{ site.title | default: site.github.repository_name }}
     </title>
 
     {% if site.favicon %}
-      <link rel="icon" href="{{ site.favicon }}" />
+      <link rel="icon" href="{{ site.favicon }}"/>
     {% else %}
-      <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" />
+      <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}"/>
     {% endif %}
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"
-    />
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}"/>
 
     <script src="{{ '/assets/js/main-bundle.js?v=' | append: site.github.build_revision | relative_url }}"></script>
 
@@ -27,7 +22,7 @@
   <body>
     <header class="header" role="banner">
       <a class="skip" href="#main-content">Skip to main content</a>
-      <a href="{{ '/' | relative_url  }}">
+      <a href="{{ '/' | relative_url }}">
         <span class="title">
           {{ site.title | default: site.github.repository_name }}
         </span>
