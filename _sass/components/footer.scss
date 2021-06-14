@@ -5,6 +5,10 @@
   margin-top: 1rem;
 
   &-site-info {
+    &.post {
+      display: none;
+    }
+
     @media screen and (min-width: $tablet) {
       display: none;
     }
