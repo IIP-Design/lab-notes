@@ -1,3 +1,4 @@
+@import '../variables/breakpoints.scss';
 @import '../variables/colors.scss';
 
 .container {
@@ -8,9 +9,9 @@
     'sidebar content'
     'sidebar footer';
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $tablet) {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 }
 
