@@ -11,18 +11,16 @@
 }
 
 .post {
-  &-container {
-    margin: 1rem auto;
-    max-width: 1100px;
-  }
+  margin: 0 1rem;
 
-  &-content {
-    margin: 0 0.5rem;
+  &-container {
+    margin: 1.5rem auto;
+    max-width: 1100px;
   }
 
   &-metadata {
     border-bottom: 2px solid $gold;
-    margin: 1rem 0.5rem;
+    margin: 1rem 0;
     padding: 0 2rem 0.5rem 0;
     width: fit-content;
   }

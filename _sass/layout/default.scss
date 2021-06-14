@@ -2,9 +2,11 @@
 
 .container {
   display: grid;
-  grid-template-columns: 30% 70%;
-  margin: 1rem auto;
-  max-width: 1300px;
+  gap: 1rem;
+  grid-template-columns: 250px minmax(0, 1100px);
+  grid-template-areas:
+    'sidebar content'
+    'sidebar footer';
 
   @media screen and (max-width: 768px) {
     display: flex;
@@ -13,7 +15,7 @@
 }
 
 .content {
-  margin: 0 1rem;
+  grid-area: content;
 }
 
 .content a:not(.blog-roll-link),

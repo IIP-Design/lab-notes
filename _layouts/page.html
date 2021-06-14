@@ -2,13 +2,10 @@
 layout: default
 ---
 
-{% if page.title %}
-  <h1>{{ page.title }}</h1>
-{% endif %}
-{% if page.subtitle %}
-  <h2 class="page-subtitle">{{ page.subtitle }}</h2>
-{% endif %}
+<article class="page-content">
+  {% if page.title %}
+    <h1>{{ page.title }}</h1>
+  {% endif %}
 
-<div class="page-content">
   {{ content }}
-</div>
+</article>

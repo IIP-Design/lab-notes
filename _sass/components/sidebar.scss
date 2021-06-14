@@ -2,22 +2,27 @@
 @import '../variables/typography.scss';
 
 .description {
+  font-size: $fontSizeSmall;
+  margin: 1rem 0 1.5rem;
   text-align: center;
 }
 
 .logo {
-  margin: 0 auto 1rem;
+  margin: 0 auto;
   width: 50%;
 }
 
 .sidebar {
-  margin: 0 1rem;
+  border-right: $borderLight;
+  box-shadow: $boxShadow;
+  grid-area: sidebar;
 
   &-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    height: 100%;
     padding-top: 1rem;
+  }
+
+  &-sticky {
     position: sticky;
     top: 0;
   }

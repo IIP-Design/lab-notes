@@ -6,8 +6,7 @@
   font-family: 'Cascadia Code Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Cascadia Code Regular'),
-    url('../fonts/Cascadia.woff') format('woff');
+  src: local('Cascadia Code Regular'), url('../fonts/Cascadia.woff') format('woff');
 }
 
 // Font-family variables.
@@ -16,7 +15,7 @@ $fontHeader: 'EB Garamond', Times, serif;
 $fontMonospace: 'Cascadia Code Regular', monospace;
 
 // Font-size variables.
-$fontSizeBase: 17px;
+$fontSizeBase: 16px;
 
 $fontSizeSmall: 0.85rem;
 $fontSizeNormal: 1rem;

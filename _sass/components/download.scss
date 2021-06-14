@@ -3,6 +3,7 @@
   color: $greyMedium;
   display: flex;
   flex-direction: column;
+  font-size: $fontSizeSmall;
   font-weight: 400;
 
   &:focus {
@@ -17,29 +18,19 @@
 }
 
 .downloads {
-  border: $borderLight;
-  border-radius: 5px;
-  box-shadow: $boxShadow;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  justify-content: center;
   list-style: none;
-  margin: 1rem 0.5rem;
+  margin: 0.5rem 0;
   padding: 0.5rem;
+
+  > li {
+    padding: 0.5rem;
+    width: 33%;
+  }
 
   > li:hover {
     background-color: $greyLightest;
-    margin: -0.5rem 0;
-    padding: 0.5rem 0;
-
-    &:first-of-type {
-      margin-left: -0.5rem;
-      padding-left: 0.5rem;
-    }
-
-    &:last-of-type {
-      margin-right: -0.5rem;
-      padding-right: 0.5rem;
-    }
   }
 
   > li:not(:last-of-type) {

@@ -1,25 +1,25 @@
 <div class="sidebar-content">
-  <div>
-    {% if site.logo != false %}
-      <figure class="logo">
-        {% if site.logo %}
-          <img alt="" src="{{ site.logo | relative_url }}" />
-        {% else %}
-          <img alt="" src="{{ '/assets/img/dos_seal.svg' | relative_url }}" />
-        {% endif %}
-      </figure>
-    {% endif %}
+  {% if site.logo != false %}
+    <figure class="logo">
+      {% if site.logo %}
+        <img alt="" src="{{ site.logo | relative_url }}"/>
+      {% else %}
+        <img alt="" src="{{ '/assets/img/dos_seal.svg' | relative_url }}"/>
+      {% endif %}
+    </figure>
+  {% endif %}
 
-    {% if site.description %}
-      <p class="description">{{ site.description }}</p>
-    {% endif %}
-    
+  {% if site.description %}
+    <p class="description">{{ site.description }}</p>
+  {% endif %}
+
+  <div class="sidebar-sticky">
     {% if site.show_nav and site.data.main_nav %}
       {% include main_nav.html %}
     {% endif %}
-  </div>
 
-  {% if site.show_downloads %}
-    {% include downloads.html %}
-  {% endif %}
+    {% if site.show_downloads %}
+      {% include downloads.html %}
+    {% endif %}
+  </div>
 </div>
