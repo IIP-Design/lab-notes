@@ -1,0 +1,55 @@
+.video {
+  &-background {
+    background-color: $gold;
+    box-shadow: $boxShadow;
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    transform: translateX(1.5rem);
+
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+
+  &-container {
+    margin: 1rem 0;
+
+    @media screen and (min-width: $tablet) {
+      margin: 0 1.5rem 1.5rem 0;
+    }
+  }
+
+  &-embed {
+    margin: 0 auto;
+    max-width: 832px;
+    text-align: center;
+    width: 100%;
+  }
+
+  &-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+
+    & iframe {
+      background-color: $black;
+      box-shadow: $boxShadow;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100% !important;
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 519px;
+    width: 100%;
+  }
+}
