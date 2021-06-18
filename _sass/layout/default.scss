@@ -36,7 +36,7 @@
     width: 100%;
     height: 5px;
     z-index: -1;
-    transition: 0.5s cubic-bezier(0.25, 0.1, 0, 2.05);
+    transition: 0.5s cubic-bezier(0.25, 0.1, 0, 1.5);
   }
 
   &:hover:after {
@@ -79,6 +79,6 @@
   font-size: $fontSizeHuge;
   font-weight: normal;
   margin: 0 auto;
-  max-width: 1300px;
+  max-width: $max-width;
   padding: 2rem 1rem;
 }
