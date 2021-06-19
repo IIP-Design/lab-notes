@@ -1,6 +1,6 @@
 <nav class="nav" role="navigation">
   <button class="btn nav-toggle" id="nav-toggle">Menu</button>
-  <p class="nav-header">{{ site.data.main_nav.nav_title | default: "Contents" }}</p>
+  <p class="nav-header">{{ site.data.main_nav.nav_title | default: "Site Contents" }}</p>
   <ul class="nav-list" role="list">
     {% for item in site.data.main_nav.nav_list %}
       <li class="nav-item" role="listitem">

@@ -7,6 +7,7 @@
   grid-template-rows: minmax(0, 1fr);
   height: 100%;
   min-height: calc(100vh - 123px);
+  width: 100%;
 
   @media screen and (min-width: $tablet) {
     display: grid;
@@ -16,14 +17,24 @@
       'sidebar content'
       'sidebar footer';
   }
+
+  @media screen and (min-width: $lg-screen) {
+    grid-template-columns: 250px minmax(0, 1fr);
+  }
 }
 
 .content {
   grid-area: content;
+
+  @media screen and (min-width: $lg-screen) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: minmax(0, 1100px) minmax(250px, 1fr);
+  }
 }
 
-.content a:not(.blog-roll-link),
-.post-container a:not(.blog-roll-link) {
+.content a:not(.blog-roll-link, .toc-link),
+.post-container a:not(.blog-roll-link, .toc-link) {
   position: relative;
   overflow: hidden;
 

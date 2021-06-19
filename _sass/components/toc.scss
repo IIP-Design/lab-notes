@@ -1,0 +1,38 @@
+.toc {
+  &-container {
+    height: 90%;
+  }
+
+  &-floating {
+    display: none;
+    margin: 1rem;
+    position: sticky;
+    top: 1rem;
+
+    @media screen and (min-width: $lg-screen) {
+      display: block;
+    }
+  }
+
+  &-link {
+    color: $blueLight;
+    font-size: $fontSizeSmall;
+    font-weight: normal;
+
+    &:hover {
+      color: $blueLight;
+      font-weight: 700;
+    }
+  }
+
+  &-list {
+    list-style: none;
+    margin: 0.5rem 0;
+    padding: 0;
+
+    > li {
+      text-indent: -0.5rem;
+      margin: 0 0.5rem;
+    }
+  }
+}
