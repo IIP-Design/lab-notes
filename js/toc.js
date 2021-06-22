@@ -132,6 +132,8 @@ const buildTOC = headings => {
 
     const item = document.createElement( 'li' );
 
+    item.classList.add( `from-${heading.tagName.toLowerCase()}` );
+
     item.appendChild( link );
     list.appendChild( item );
   } );
