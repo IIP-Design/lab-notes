@@ -23,7 +23,7 @@
     <header class="header" role="banner">
       <a class="skip" href="#main-content">Skip to main content</a>
       <a href="{{ '/' | relative_url }}">
-        <span class="title">
+        <span class="title {{ page.layout }}-title{% if page.toc %} with-toc{% endif %}">
           {{ site.title | default: site.github.repository_name }}
         </span>
       </a>

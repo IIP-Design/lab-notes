@@ -36,7 +36,7 @@
 }
 
 .full {
-  max-width: 1350px;
+  max-width: $wide-width;
 }
 
 .content a:not(.blog-roll-link, .toc-link),
@@ -96,6 +96,33 @@
   font-size: $fontSizeHuge;
   font-weight: normal;
   margin: 0 auto;
-  max-width: $max-width;
   padding: 2rem 1rem;
+
+  &.changelog-title,
+  &.page-title,
+  &.page_full-title {
+    @media screen and (min-width: $desktop) {
+      margin: 0 250px;
+    }
+  }
+
+  &.post-title {
+    &.with-toc {
+      @media screen and (min-width: $desktop) {
+        max-width: $wide-width;
+      }
+    }
+
+    &:not(.with-toc) {
+      @media screen and (min-width: $desktop) {
+        max-width: $normal-width;
+      }
+    }
+  }
+
+  &.presentation-title {
+    @media screen and (min-width: $desktop) {
+      max-width: $normal-width;
+    }
+  }
 }
