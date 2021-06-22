@@ -25,12 +25,18 @@
 
 .content {
   grid-area: content;
+}
 
+.default {
   @media screen and (min-width: $lg-screen) {
     display: grid;
     gap: 1rem;
     grid-template-columns: minmax(0, 1100px) minmax(250px, 1fr);
   }
+}
+
+.full {
+  max-width: 1350px;
 }
 
 .content a:not(.blog-roll-link, .toc-link),
