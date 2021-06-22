@@ -48,6 +48,12 @@ const makeInactive = el => {
 const passedOffset = ( current, target ) => current >= target;
 
 /**
+ * Checks whether the user has reached the end of the page.
+ * @returns {boolean} Whether or not the user has scrolled to the bottom of the page.
+ */
+const atTheBottom = () => ( window.innerHeight + window.pageYOffset ) >= document.body.offsetHeight;
+
+/**
  * Toggles the active class on and off of TOC links as the user scrolls down the page.
  * @param {number} offset The current vertical position on the page.
  * @param {HTMLElement[]} links List of the links in the table of contents.
@@ -63,6 +69,11 @@ const trackInToc = ( offset, links ) => {
       makeActive( link );
     } else if ( passedOffset( offset, link.dataset.offset ) && !passedNext ) {
       // Has been passed and next link has not been passed.
+      makeActive( link );
+    } else if ( idx + 1 === links.length && atTheBottom() ) {
+      // Final link in TOC and the user has scrolled all the way to the bottom.
+      // Addresses the situation where the final heading is brought into view by scrolling,
+      // but there is not enough content on the page for it to reach the top of the page.
       makeActive( link );
     } else {
       makeInactive( link );
