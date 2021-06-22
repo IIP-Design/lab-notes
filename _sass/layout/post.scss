@@ -15,7 +15,18 @@
 
   &-container {
     margin: 1.5rem auto;
-    max-width: $max-width;
+    max-width: $normal-width;
+
+    &.with-toc {
+      display: flex;
+      max-width: $wide-width;
+
+      @media screen and (min-width: $lg-screen) {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: minmax(0, 1100px) minmax(0, 250px);
+      }
+    }
   }
 
   &-metadata {

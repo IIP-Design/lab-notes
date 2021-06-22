@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<main class="post-container" id="main-content">
+<main class="post-container{% if page.toc %} with-toc{% endif %}" id="main-content">
   <article class="post">
     {% if page.title %}
       <h1>{{ page.title }}</h1>
@@ -23,12 +23,18 @@ layout: base
       </div>
     {% endif %}
 
-    <div class="post-content">{{ content }}</div>
+    <div class="post-content">
+      {{ content }}
+    </div>
 
     {% if page.tags != empty %}
       {% include tags.html %}
     {% endif %}
   </article>
+
+  {% if page.toc %}
+    {% include toc.html %}
+  {% endif %}
 </main>
 
 {% include footer.html page_type="post" %}
