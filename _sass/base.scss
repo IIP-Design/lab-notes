@@ -123,6 +123,12 @@ ul {
   margin: 1.5rem 0 2rem 0;
 }
 
+li,
+li > ol,
+li > ul {
+  margin: 0.3rem 0;
+}
+
 pre {
   overflow: auto;
 }
