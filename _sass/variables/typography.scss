@@ -3,16 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
 
 @font-face {
-  font-family: 'Cascadia Code Regular';
+  font-family: 'Cascadia Code Mono';
   font-style: normal;
   font-weight: normal;
-  src: local('Cascadia Code Regular'), url('../fonts/Cascadia.woff') format('woff');
+  src: local('Cascadia Code Mono'), url('../fonts/CascadiaMono.woff2') format('woff2');
 }
 
 // Font-family variables.
 $fontBase: 'Open Sans', Arial, sans-serif;
 $fontHeader: 'EB Garamond', Times, serif;
-$fontMonospace: 'Cascadia Code Regular', monospace;
+$fontMonospace: 'Cascadia Code Mono', monospace;
 
 // Font-size variables.
 $fontSizeBase: 16px;
