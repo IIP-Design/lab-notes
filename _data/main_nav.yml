@@ -1,24 +1,22 @@
 nav_list:
-  - title: Installation
-    url: "#installation"
+  - title: Setup
+    url: /
 
-  - title: Configuration
-    url: "#configuration"
+  - title: Features
+    url: features
+    subitems:
+      - title: Layouts
+        url: features/#layouts
 
-  - title: Layouts
-    url: "#layouts"
+      - title: Navigation
+        url: features/#navigation
+
+      - title: Syntax Highlighting
+        url: features/#syntax-highlighting
 
   - title: Customization
-    url: "#customization"
+    url: customize
 
-  - title: Navigation
-    url: "#navigation"
-
-  - title: Syntax Highlighting
-    url: "#syntax-highlighting"
-
-  - title: Development
-    url: "#development"
 
   - title: Changelog
     url: changes
