@@ -6,13 +6,13 @@ nav_list:
     url: features
     subitems:
       - title: Layouts
-        url: features/#layouts
+        url: features#layouts
 
       - title: Navigation
-        url: features/#navigation
+        url: features#navigation
 
       - title: Syntax Highlighting
-        url: features/#syntax-highlighting
+        url: features#syntax-highlighting
 
   - title: Customization
     url: customize
