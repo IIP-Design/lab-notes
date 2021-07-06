@@ -3,7 +3,7 @@ title: Getting Started with Lab Notes
 layout: page
 ---
 
-Lab Notes is the default theme for all [GPA/LAB](https://github.com/iip-design) documentation pages. It is an extensible markdown-driven Jekyll theme intended for use with GitHub Pages. It has built-in syntax highlighting, a blog roll component for landing pages, and several [layout options](/features#layouts). Additionally, the theme provides optional widgets for GitHub download links and navigation.
+Lab Notes is the default theme for all [GPA/LAB](https://github.com/iip-design) documentation pages. It is an extensible markdown-driven Jekyll theme intended for use with GitHub Pages. It has built-in syntax highlighting, a blog roll component for landing pages, and several [layout options]({{ '/features#layouts' | relative_url }}). Additionally, the theme provides optional widgets for GitHub download links and navigation.
 
 ## Installation
 
@@ -28,7 +28,7 @@ There are several configuration options built into the theme, specifically:
 - **favicon**: Path to an image to use for the site's favicon. It can be a relative or absolute path. Note that when using relative paths on GitHub Pages the base url is `https://user-name.github.io`. Will default to the State Department seal if left blank.
 - **logo**: Path to an image to use for the site's logo, which appears at the top of the sidebar. It can be a relative or absolute path. As with the favicon, on GitHub Pages the base url is `https://user-name.github.io`. Will default to the State Department seal if left blank. If you want to remove the logo entirely, set logo to `false`.
 - **show_downloads**: For hosting on GitHub Pages. If set to true, this will add a widget to the sidebar with download links for .zip and .tar releases of the hosting repository as well as a link to the repository page on GitHub.
-- **show_nav**: Used in conjunction with a `main_nav.yaml` data file (see the [navigation section](/features#navigation)) to add a main site navigation menu widget to the page sidebar.
+- **show_nav**: Used in conjunction with a `main_nav.yaml` data file (see the [navigation section]({{ '/features#navigation' | relative_url }})) to add a main site navigation menu widget to the page sidebar.
 
 These configurations should be set in the `_config.yml` at the root of your `docs` directory, and will look something like this:
 

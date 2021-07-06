@@ -3,7 +3,7 @@ title: Customize This Theme
 layout: page
 ---
 
-Beyond the base configuration options discussed in the [configuration section](/#configuration), Lab Notes - like all Jekyll themes - can be customized for your site. Any core theme file can be replaced by an equivalent file locally.
+Beyond the base configuration options discussed in the [configuration section]({{ '/#configuration' | relative_url }}), Lab Notes - like all Jekyll themes - can be customized for your site. Any core theme file can be replaced by an equivalent file locally.
 
 For example, to change the included page layout, you can add a file called `page.html` to a `_layouts` at the root of your docs. This will override the equivalent file from the theme.
 
