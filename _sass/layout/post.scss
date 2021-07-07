@@ -12,6 +12,7 @@
 
 .post {
   margin: 0 1rem;
+  max-width: calc(100vw - 2rem);
 
   &-container {
     margin: 1.5rem auto;
@@ -19,6 +20,7 @@
 
     &.with-toc {
       display: flex;
+      flex-direction: column;
       max-width: $wide-width;
 
       @media screen and (min-width: $lg-screen) {
