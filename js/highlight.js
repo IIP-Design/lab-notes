@@ -5,6 +5,7 @@ import hljsDefineGraphQL from 'highlightjs-graphql';
 import apache from 'highlight.js/lib/languages/apache';
 import bash from 'highlight.js/lib/languages/bash';
 import css from 'highlight.js/lib/languages/css';
+import diff from 'highlight.js/lib/languages/diff';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
 import http from 'highlight.js/lib/languages/http';
 import javascript from 'highlight.js/lib/languages/javascript';
@@ -26,6 +27,7 @@ export const initHighlighting = () => {
   hljs.registerLanguage( 'apache', apache );
   hljs.registerLanguage( 'bash', bash );
   hljs.registerLanguage( 'css', css );
+  hljs.registerLanguage( 'diff', diff );
   hljs.registerLanguage( 'dockerfile', dockerfile );
   hljs.registerLanguage( 'http', http );
   hljs.registerLanguage( 'javascript', javascript );

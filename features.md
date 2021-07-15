@@ -81,6 +81,7 @@ While highlight.js supports a wide variety of programming languages, the majorit
 | Bash       | bash, sh, zsh                                          |
 | CSS        | css                                                    |
 | Dockerfile | dockerfile, docker                                     |
+| Git Diff   | diff                                                   |
 | GraphQL    | graphql, gql                                           |
 | HTML       | xml, html, xhtml, rss, atom, xjb, xsd, xsl, plist, svg |
 | HTTP       | http, https                                            |
