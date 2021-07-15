@@ -6,12 +6,31 @@ pre {
 }
 
 .hljs {
+  background: #282c34;
   border-radius: 5px;
+  color: #abb2bf;
   display: block;
   overflow-x: auto;
   padding: 1rem;
+}
+
+/* purposely do not highlight these things */
+.hljs-params,
+.hljs-property {
   color: #abb2bf;
-  background: #282c34;
+}
+
+.hljs-tag {
+  color: #565c64;
+}
+
+.hljs-operator,
+.hljs-punctuation {
+  color: #abb2bf;
+}
+
+.hljs-operator {
+  opacity: 0.7;
 }
 
 .hljs-comment,
@@ -20,16 +39,23 @@ pre {
   font-style: italic;
 }
 
+.hljs-keyword.hljs-atrule,
+.hljs-regexp {
+  color: #56b6c2;
+}
+
+.diff .hljs-meta,
 .hljs-doctag,
+.hljs-formula,
 .hljs-keyword,
-.hljs-formula {
+.hljs-template-tag {
   color: #c678dd;
 }
 
-.hljs-section,
-.hljs-name,
-.hljs-selector-tag,
 .hljs-deletion,
+.hljs-name,
+.hljs-section,
+.hljs-selector-tag,
 .hljs-subst {
   color: #fa6672;
 }
@@ -38,40 +64,48 @@ pre {
   color: #56b6c2;
 }
 
-.hljs-string,
-.hljs-regexp,
 .hljs-addition,
 .hljs-attribute,
-.hljs-meta-string {
+.hljs-code,
+.hljs-meta-string,
+.hljs-regexp,
+.hljs-string,
+.hljs-title.class_.inherited__ {
   color: #98c379;
 }
 
 .hljs-built_in,
-.hljs-class .hljs-title {
+.hljs-class .hljs-title,
+.hljs-title.class_ {
   color: #e6c07b;
 }
 
 .hljs-attr,
-.hljs-variable,
+.hljs-number,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-pseudo,
 .hljs-template-variable,
 .hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
+.hljs-variable,
+.hljs-variable.constant_ {
   color: #d19a66;
 }
 
-.hljs-symbol,
 .hljs-bullet,
 .hljs-link,
 .hljs-meta,
+.hljs-section,
 .hljs-selector-id,
-.hljs-title {
+.hljs-symbol,
+.hljs-title,
+.hljs-title.function_,
+.ruby .hljs-property {
   color: #61aeee;
 }
 
 .hljs-emphasis {
+  color: #c678dd;
   font-style: italic;
 }
 
