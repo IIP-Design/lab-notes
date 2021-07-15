@@ -43,5 +43,5 @@ export const initHighlighting = () => {
   hljs.registerLanguage( 'xml', xml );
   hljs.registerLanguage( 'yaml', yaml );
 
-  hljs.initHighlightingOnLoad();
+  hljs.highlightAll();
 };
