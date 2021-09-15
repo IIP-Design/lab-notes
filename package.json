@@ -37,7 +37,7 @@
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
   },
-  "browserslist": "> 0.25%, not dead",
+  "browserslist": "last 2 Chrome version",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/IIP-Design/lab-notes.git"
