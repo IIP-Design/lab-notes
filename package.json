@@ -17,7 +17,8 @@
   ],
   "scripts": {
     "build": "webpack --mode production",
-    "dev": "webpack -w --mode development"
+    "dev": "webpack -w --mode development",
+    "lint": "eslint --ext .js --quiet ./"
   },
   "dependencies": {
     "highlight.js": "^11.0.1",
