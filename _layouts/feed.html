@@ -30,10 +30,10 @@ excluded_pages: [ '/feed.json', '/search.html', '/404.html', '/assets/css/style.
   "expired": false,
   "items": [
     {% for feed in page.feeds %}
-      {% for item in site.[feed] %}
+      {% for item in site[feed] %}
         {% if layout.excluded_pages contains item.url or page.excluded_pages contains item.url %}
           {
-            "id": "{{ item.url | absolute_url | sha1 }}",
+            "id": "{{ item.url | absolute_url }}",
             "_omit": true
           }
           {% if forloop.last == false %},
