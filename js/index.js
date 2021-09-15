@@ -1,4 +1,5 @@
 import { initHighlighting } from './highlight';
+import { initializeSearch } from './search';
 import { initializeTOC } from './toc';
 import { navToggleListener } from './menu-toggle';
 import { ready } from './document-ready';
@@ -8,6 +9,7 @@ import { ready } from './document-ready';
  */
 ready( () => {
   initHighlighting();
+  initializeSearch();
   initializeTOC();
   navToggleListener();
 } );
