@@ -99,8 +99,8 @@ const displayNoResults = () => {
  * Retrieve a JSON version of the site content.
  * @returns {Object} The site content in JSON format.
  */
-const getFeed = async () => {
-  const response = await fetch( '/feed.json' );
+const getFeed = async feedURL => {
+  const response = await fetch( feedURL );
 
   return response.json();
 };
@@ -113,12 +113,16 @@ export const initializeSearch = async () => {
   const searchTerm = getQueryParam( 'query' );
 
   if ( searchTerm ) {
-    const feed = await getFeed();
+    const searchBox = document.getElementById( 'search-box' );
+
+    searchBox.setAttribute( 'value', searchTerm );
+
+    // Get the feed URL data attribute and use it to fetch the site's feed data.
+    const feedURL = searchBox.dataset.feed;
+    const feed = await getFeed( feedURL );
 
     // Establish an index of documents to search against.
     const documents = feed?.items || [];
-
-    document.getElementById( 'search-box' ).setAttribute( 'value', searchTerm );
 
     // Initialize lunr with the fields it should search.
     // The post title is boosted to indicate matches on this field are more important.
