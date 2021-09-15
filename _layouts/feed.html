@@ -41,7 +41,7 @@ excluded_pages: [ '/feed.json', '/search.html', '/404.html', '/assets/css/style.
         {% else %}
           {
             "id": "{{ item.url | absolute_url }}",
-            "url": "{{ site.url | relative_url }}{{ item.url }}",
+            "url": "{{ item.url | absolute_url }}",
             "title": {{ item.title | jsonify }},
             "content_text": {{ item.content | strip_html | jsonify }},
             "summary": {{ item.excerpt | strip_html | jsonify }},

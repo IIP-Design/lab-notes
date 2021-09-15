@@ -59,25 +59,27 @@ const displaySearchResults = ( results, documents ) => {
   results.forEach( result => {
     const item = documents.filter( doc => doc.url === result.ref )[0];
 
-    // Initialize all the components that constitute a list item.
-    const listItem = document.createElement( 'li' );
-    const title = document.createElement( 'a' );
-    const excerpt = document.createElement( 'p' );
+    if ( item ) {
+      // Initialize all the components that constitute a list item.
+      const listItem = document.createElement( 'li' );
+      const title = document.createElement( 'a' );
+      const excerpt = document.createElement( 'p' );
 
-    // Populate the item title link.
-    title.setAttribute( 'href', item.url );
-    title.innerHTML = item.title;
+      // Populate the item title link.
+      title.setAttribute( 'href', item.url );
+      title.innerHTML = item.title;
 
-    // Populate the item excerpt text.
-    excerpt.innerHTML = truncate( item.content_text, 300 );
+      // Populate the item excerpt text.
+      excerpt.innerHTML = truncate( item.content_text, 300 );
 
-    // Populate the list item with the generated title and excerpt elements.
-    listItem.setAttribute( 'class', 'search-result' );
-    listItem.appendChild( title );
-    listItem.appendChild( excerpt );
+      // Populate the list item with the generated title and excerpt elements.
+      listItem.setAttribute( 'class', 'search-result' );
+      listItem.appendChild( title );
+      listItem.appendChild( excerpt );
 
-    // Append the list item to the bottom of the results list.
-    list.appendChild( listItem );
+      // Append the list item to the bottom of the results list.
+      list.appendChild( listItem );
+    }
   } );
 
   // And finally append the ul with it's children to the results container.
