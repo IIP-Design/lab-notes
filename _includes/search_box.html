@@ -5,6 +5,7 @@
     </label>
     <input
       class="search-input"
+      data-feed="{{ 'feed.json' | relative_url }}"
       id="search-box"
       name="query"
       placeholder="{{ include.placeholder | default: 'Search' }}"
