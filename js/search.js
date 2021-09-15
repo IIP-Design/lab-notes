@@ -90,7 +90,9 @@ const displaySearchResults = ( results, documents ) => {
 const displayNoResults = () => {
   const container = getResultsContainer();
 
-  container.innerHTML = '<div class="no-results"><span>No results found</span></div>';
+  if ( container ) {
+    container.innerHTML = '<div class="no-results"><span>No results found</span></div>';
+  }
 };
 
 /**
@@ -107,15 +109,15 @@ const getFeed = async () => {
  * Construct the search index and ready the site to accept search queries.
  */
 export const initializeSearch = async () => {
-  const feed = await getFeed();
-
-  // Establish an index of documents to search against.
-  const documents = feed?.items || [];
-
   // Pull the desired search term from the URL query params.
   const searchTerm = getQueryParam( 'query' );
 
   if ( searchTerm ) {
+    const feed = await getFeed();
+
+    // Establish an index of documents to search against.
+    const documents = feed?.items || [];
+
     document.getElementById( 'search-box' ).setAttribute( 'value', searchTerm );
 
     // Initialize lunr with the fields it should search.
