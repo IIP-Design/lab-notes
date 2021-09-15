@@ -1,0 +1,46 @@
+@import '../variables/colors.scss';
+@import '../variables/typography.scss';
+
+.no-results {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 5rem 1rem;
+
+  > span {
+    font-family: $fontHeader;
+    font-size: $fontSizeMedium;
+  }
+}
+
+.search {
+  &-box-container {
+    margin: 1rem 0.5rem;
+  }
+
+  &-result {
+    margin: 1rem 0;
+
+    > a {
+      font-family: $fontHeader;
+      font-size: $fontSizeMediumSmall;
+    }
+
+    > p {
+      margin: 1rem 0;
+    }
+  }
+
+  &-results {
+    list-style: none;
+    padding: 0;
+
+    &-container {
+      margin: 1rem;
+    }
+
+    > li:not(:last-of-type) {
+      border-bottom: 1px solid $greyLight;
+    }
+  }
+}
