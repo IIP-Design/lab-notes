@@ -8,7 +8,7 @@ layout: base
       <h1>{{ page.title }}</h1>
     {% endif %}
 
-    {% if page.author or page.published %}
+    {% if page.author or page.date %}
       <div class="post-metadata">
         {% if page.author %}
           <p class="meta">By:
@@ -16,9 +16,9 @@ layout: base
           </p>
         {% endif %}
 
-        {% if page.published %}
+        {% if page.date %}
           <p class="meta">Published:
-            {{ page.published }}</p>
+            {{ page.date | date_to_string: "ordinal", "US" }}</p>
         {% endif %}
       </div>
     {% endif %}
