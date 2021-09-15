@@ -40,27 +40,14 @@
 }
 
 .content a:not(.blog-roll-link, .toc-link),
-.post-container a:not(.blog-roll-link, .toc-link) {
-  position: relative;
-  overflow: hidden;
+.post-container a:not(.blog-roll-link, .toc-link),
+.search-result a {
+  text-decoration: underline 2px solid rgba($gold, 0.5);
 
-  &::after {
-    content: '';
-    background: rgba($gold, 0.5);
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 100%;
-    height: 5px;
-    z-index: -1;
-    transition: 0.5s cubic-bezier(0.25, 0.1, 0, 1.5);
-  }
-
-  &:hover:after {
-    left: -2px;
-    bottom: -2px;
-    width: calc(100% + 4px);
-    height: calc(100% + 2px);
+  &:hover {
+    text-decoration: none;
+    background-color: rgba($gold, 0.5);
+    transition: 0.3s ease-in;
   }
 }
 
