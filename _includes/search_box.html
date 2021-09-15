@@ -1,7 +1,17 @@
 <div class="search-box-container">
-  <form action="/search.html" method="get">
-    <label for="search-box">Search</label>
-    <input id="search-box" name="query" type="text">
-    <input type="submit" value="search">
+  <form action="/search.html" method="get" role="search">
+    <label for="search-box">
+      <span class="visually-hidden">Search for site content</span>
+    </label>
+    <input
+      class="search-input"
+      id="search-box"
+      name="query"
+      placeholder="{{ include.placeholder | default: 'Search' }}"
+      type="text"
+    >
+    <button class="btn search-button" type="submit">
+      Search
+    </button>
   </form>
 </div>

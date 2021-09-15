@@ -1,3 +1,4 @@
+@import '../variables/breakpoints.scss';
 @import '../variables/colors.scss';
 @import '../variables/typography.scss';
 
@@ -15,7 +16,30 @@
 
 .search {
   &-box-container {
+    display: flex;
+    justify-content: center;
     margin: 1rem 0.5rem;
+  }
+
+  &-button {
+    border: $borderBlue;
+    border-bottom: 0;
+    border-radius: 0 5px 5px 0;
+    font-size: $fontSizeNormal;
+    margin-left: -84px;
+  }
+
+  &-input {
+    border: $borderLight;
+    border-radius: 5px 0 0 5px;
+    box-shadow: $boxShadow;
+    font-size: $fontSizeNormal;
+    min-width: 80vw;
+    padding: 0.5rem 1rem;
+
+    @media screen and (min-width: $tablet) {
+      min-width: 45vw;
+    }
   }
 
   &-result {
