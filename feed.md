@@ -1,6 +1,6 @@
 ---
 layout: feed
 permalink: feed.json
-feeds: ['examples', 'pages']
+feeds: ['pages']
 excluded_pages: [ '/changes.html', '/examples.html' ]
 ---
