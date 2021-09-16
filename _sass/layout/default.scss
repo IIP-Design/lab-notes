@@ -87,7 +87,8 @@
 
   &.changelog-title,
   &.page-title,
-  &.page_full-title {
+  &.page_full-title,
+  &.search-title {
     @media screen and (min-width: $desktop) {
       margin: 0 250px;
     }
