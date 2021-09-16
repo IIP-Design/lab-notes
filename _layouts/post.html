@@ -16,9 +16,16 @@ layout: base
           </p>
         {% endif %}
 
-        {% if page.date %}
-          <p class="meta">Published:
-            {{ page.date | date_to_string: "ordinal", "US" }}</p>
+        {% if page.show_date %}
+          <p class="meta">
+            {% if page.modified %}
+              Updated:
+              {{ page.modified | date_to_string: "ordinal", "US" }}
+            {% else %}
+              Published:
+              {{ page.date | date_to_string: "ordinal", "US" }}
+            {% endif %}
+          </p>
         {% endif %}
       </div>
     {% endif %}
