@@ -44,6 +44,80 @@ const truncate = ( str, length ) => ( str.length < length ? str : `${str.substri
 const getResultsContainer = () => document.getElementById( 'search-results-container' );
 
 /**
+ * Creates a snippet highlighting the search term within it's text context.
+ * @param {string} before The 75 characters before the term.
+ * @param {string} highlight The term to highlight.
+ * @param {string} after The 75 characters after the term.
+ * @returns {HTMLElement} A paragraph containing the highlighted snippet.
+ */
+const createHighlightSpan = ( before, highlight, after ) => {
+  const para = document.createElement( 'p' );
+
+  const beforeText = before.length >= 75 ? `...${before}` : before;
+  const afterText = after.length >= 75 ? `${after}...` : after;
+
+  const textString = `${beforeText}<span class="highlighted">${highlight}</span>${afterText}`;
+
+  para.innerHTML = textString;
+
+  return para;
+};
+
+/**
+ * Extracts the positions data from the Lunr results object.
+ * @param {Object} result A search result returned from Lunr.
+ * @returns {Array} List of positions arrays (each with a start position and an length).
+ */
+const getPositions = result => {
+  const metadata = result?.matchData?.metadata;
+
+  if ( metadata ) {
+    // The term used by Lunr is not always the same as the raw
+    const modifiedTerm = Object.keys( metadata )[0];
+
+    const positions = metadata[modifiedTerm]?.content_text?.position || [];
+
+    return positions;
+  }
+
+  return [];
+};
+
+/**
+ * Generate a list of snippets from the post content.
+ * @param {string} text The content text for a given post.
+ * @param {Object} result A search result returned from Lunr.
+ * @param {string} term The text being searched for.
+ * @returns {HTMLElement} The list of text snippets containing the search term.
+ */
+const generateSnippets = ( text, result, term ) => {
+  const termLength = term.length;
+  const positions = getPositions( result );
+
+  const container = document.createElement( 'div' );
+
+  if ( positions.length ) {
+    positions.forEach( pos => {
+      const start = pos[0];
+      const end = start + termLength;
+
+      const beforeStart = start > 75 ? start - 75 : 0;
+      const afterEnd = text.length > end + 75 ? end + 75 : null;
+
+      const before = text.slice( beforeStart, start );
+      const highlight = text.slice( start, end );
+      const after = afterEnd ? text.slice( end, afterEnd ) : text.slice( end );
+
+      const snippet = createHighlightSpan( before, highlight, after );
+
+      container.appendChild( snippet );
+    } );
+
+    return container;
+  }
+};
+
+/**
  * If tags are present, create a list element to display them.
  * @param {string[]} tags A list of tags associated with a given item.
  * @param {string} searchTerm The text being searched for.
@@ -82,7 +156,7 @@ const generateTags = ( tags, searchTerm ) => {
 
 /**
  * Render the search results on the page.
- * @param {Object[]} results Matching posts returned by the lunr search.
+ * @param {Object[]} results Matching posts returned by the Lunr search.
  * @param {Object[]} documents All the posts being searched.
  */
 const displaySearchResults = ( results, documents, searchTerm ) => {
@@ -101,6 +175,7 @@ const displaySearchResults = ( results, documents, searchTerm ) => {
       const listItem = document.createElement( 'li' );
       const title = document.createElement( 'a' );
       const excerpt = document.createElement( 'p' );
+      const snippets = generateSnippets( item.content_text, result, searchTerm );
       const tags = generateTags( item.tags, searchTerm );
 
       // Populate the item title link.
@@ -113,7 +188,11 @@ const displaySearchResults = ( results, documents, searchTerm ) => {
       // Populate the list item with the generated title and excerpt elements.
       listItem.setAttribute( 'class', 'search-result' );
       listItem.appendChild( title );
-      listItem.appendChild( excerpt );
+      if ( snippets ) {
+        listItem.appendChild( snippets );
+      } else {
+        listItem.appendChild( excerpt );
+      }
       if ( tags ) {
         listItem.appendChild( tags );
       }
@@ -167,20 +246,21 @@ export const initializeSearch = async () => {
     // Establish an index of documents to search against.
     const documents = feed?.items || [];
 
-    // Initialize lunr with the fields it should search.
+    // Initialize Lunr with the fields it should search.
     // The post title is boosted to indicate matches on this field are more important.
     const index = lunr( function() {
       this.field( 'url' );
       this.field( 'title', { boost: 10 } );
       this.field( 'tags' );
       this.field( 'content_text' );
+      this.metadataWhitelist = ['position'];
 
       documents.forEach( doc => {
         this.add( doc );
       }, this );
     } );
 
-    const results = index.search( searchTerm ); // Get lunr to perform a search
+    const results = index.search( searchTerm ); // Use Lunr to perform a search
 
     if ( results.length ) {
       displaySearchResults( results, documents, searchTerm );
