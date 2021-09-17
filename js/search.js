@@ -106,7 +106,7 @@ const reducePositions = positions => {
       grouped.push( group );
 
     // If the next item is not within the snippet buffer, initialize a new group.
-    } else if ( curr - prev > SNIPPET_BUFFER ) {
+    } else if ( curr - prev > ( 2 * SNIPPET_BUFFER ) ) {
       const group = [curr];
 
       grouped.push( group );
@@ -140,11 +140,14 @@ const reducePositions = positions => {
  */
 const generateSnippetText = ( group, termLength, text ) => {
   let snippetText = '';
+  let overlap = null;
 
   for ( let i = 0; i < group.length; i++ ) {
-    const start = group[i];
-    const end = start + termLength;
+    const start = overlap > 0 ? group[i] + overlap : group[i];
+    const end = overlap > 0 ? start + termLength - overlap : start + termLength;
     const after = group[i + 1] ? text.slice( end, group[i + 1] ) : '';
+
+    overlap = group[i + 1] ? end - group[i + 1] : null;
 
     snippetText += `<span class="highlighted">${text.slice( start, end )}</span>${after}`;
   }
