@@ -1,5 +1,8 @@
 import lunr from 'lunr';
 
+// The number of characters to use when padding search result highlights.
+const SNIPPET_BUFFER = 100;
+
 /**
  * Retrieve the search term from the window location.
  * @param {string} param The query param to be retrieved
@@ -51,16 +54,16 @@ const getResultsContainer = () => document.getElementById( 'search-results-conta
  * @returns {HTMLElement} A paragraph containing the highlighted snippet.
  */
 const createHighlightSpan = ( before, highlight, after ) => {
-  const para = document.createElement( 'p' );
+  const span = document.createElement( 'span' );
 
-  const beforeText = before.length >= 75 ? `...${before}` : before;
-  const afterText = after.length >= 75 ? `${after}...` : after;
+  const beforeText = before.length >= SNIPPET_BUFFER ? `...${before}` : before;
+  const afterText = after.length >= SNIPPET_BUFFER ? `${after}...` : after;
 
-  const textString = `${beforeText}<span class="highlighted">${highlight}</span>${afterText}`;
+  const textString = `${beforeText}${highlight}${afterText}`;
 
-  para.innerHTML = textString;
+  span.innerHTML = textString;
 
-  return para;
+  return span;
 };
 
 /**
@@ -84,6 +87,78 @@ const getPositions = result => {
 };
 
 /**
+ * Create an array of highlights that should be mixed together.
+ * @param {Array[]} positions List of positions arrays (each with a start position and an length).
+ * @returns List of start positions of the terms that should be grouped together.
+ */
+const reducePositions = positions => {
+  // We only need the first position value (i.e. the start position).
+  const flattened = positions.map( pos => pos[0] );
+
+  const grouped = [];
+
+  // Callback function for the positions reducer.
+  const groupPositions = ( prev, curr ) => {
+    // Initialize a group array with the first position.
+    if ( !prev ) {
+      const group = [curr];
+
+      grouped.push( group );
+
+    // If the next item is not within the snippet buffer, initialize a new group.
+    } else if ( curr - prev > SNIPPET_BUFFER ) {
+      const group = [curr];
+
+      grouped.push( group );
+
+    // If the next item is within the snippet buffer, add it to the previous group.
+    } else {
+      const groupCount = grouped.length;
+
+      grouped[groupCount - 1].push( curr );
+    }
+
+    return curr; // Make the current value the next prev value.
+  };
+
+  if ( flattened.length === 1 ) {
+    // If there is only one position in the results no need to reduce.
+    grouped.push( [flattened[0]] );
+  } else {
+    flattened.reduce( groupPositions, null );
+  }
+
+  return grouped;
+};
+
+/**
+ * Create a string with highlighted text.
+ * @param {number[]} group List of start positions of the terms that should be grouped together.
+ * @param {number} termLength Number of characters in the search term.
+ * @param {string} text The content text for a given post.
+ * @returns {string} The combined text of the highlighted snippet.
+ */
+const generateSnippetText = ( group, termLength, text ) => {
+  let snippetText = '';
+
+  for ( let i = 0; i < group.length; i++ ) {
+    const start = group[i];
+    const end = start + termLength;
+    const after = group[i + 1] ? text.slice( end, group[i + 1] ) : '';
+
+    snippetText += `<span class="highlighted">${text.slice( start, end )}</span>${after}`;
+  }
+
+  const snippetData = {
+    start: group[0],
+    end: group[group.length - 1] + termLength,
+    snippetText,
+  };
+
+  return snippetData;
+};
+
+/**
  * Generate a list of snippets from the post content.
  * @param {string} text The content text for a given post.
  * @param {Object} result A search result returned from Lunr.
@@ -96,16 +171,20 @@ const generateSnippets = ( text, result, term ) => {
 
   const container = document.createElement( 'div' );
 
-  if ( positions.length ) {
-    positions.forEach( pos => {
-      const start = pos[0];
-      const end = start + termLength;
+  container.setAttribute( 'class', 'highlight-snippet' );
 
-      const beforeStart = start > 75 ? start - 75 : 0;
-      const afterEnd = text.length > end + 75 ? end + 75 : null;
+  if ( positions.length ) {
+    const grouped = reducePositions( positions );
+
+    grouped.forEach( group => {
+      const { start, end, snippetText } = generateSnippetText( group, termLength, text );
+
+      // Calculate the start and end position snippet padding text.
+      const beforeStart = start > SNIPPET_BUFFER ? start - SNIPPET_BUFFER : 0;
+      const afterEnd = text.length > end + SNIPPET_BUFFER ? end + SNIPPET_BUFFER : null;
 
       const before = text.slice( beforeStart, start );
-      const highlight = text.slice( start, end );
+      const highlight = snippetText;
       const after = afterEnd ? text.slice( end, afterEnd ) : text.slice( end );
 
       const snippet = createHighlightSpan( before, highlight, after );
