@@ -44,11 +44,48 @@ const truncate = ( str, length ) => ( str.length < length ? str : `${str.substri
 const getResultsContainer = () => document.getElementById( 'search-results-container' );
 
 /**
+ * If tags are present, create a list element to display them.
+ * @param {string[]} tags A list of tags associated with a given item.
+ * @param {string} searchTerm The text being searched for.
+ * @returns {HTMLElement} The list of tags as an HTML element.
+ */
+const generateTags = ( tags, searchTerm ) => {
+  if ( tags?.length ) {
+    // Initialize all the components that constitute a tag list.
+    const container = document.createElement( 'div' );
+    const list = document.createElement( 'ul' );
+
+    container.setAttribute( 'class', 'tags-search' );
+    list.setAttribute( 'class', 'tags-list' );
+    list.setAttribute( 'role', 'list' );
+
+    // Loop over tags, creating a list item for each.
+    tags.forEach( tag => {
+      const item = document.createElement( 'li' );
+
+      item.setAttribute( 'class', 'tag' );
+      item.setAttribute( 'role', 'listitem' );
+      if ( tag.toLowerCase().includes( searchTerm.toLowerCase() ) ) {
+        item.setAttribute( 'class', 'tag highlighted' );
+      }
+
+      item.innerHTML = tag;
+      list.appendChild( item );
+    } );
+
+    // Append the list of tags to the tags container.
+    container.appendChild( list );
+
+    return container;
+  }
+};
+
+/**
  * Render the search results on the page.
  * @param {Object[]} results Matching posts returned by the lunr search.
  * @param {Object[]} documents All the posts being searched.
  */
-const displaySearchResults = ( results, documents ) => {
+const displaySearchResults = ( results, documents, searchTerm ) => {
   const container = getResultsContainer();
 
   const list = document.createElement( 'ul' );
@@ -64,6 +101,7 @@ const displaySearchResults = ( results, documents ) => {
       const listItem = document.createElement( 'li' );
       const title = document.createElement( 'a' );
       const excerpt = document.createElement( 'p' );
+      const tags = generateTags( item.tags, searchTerm );
 
       // Populate the item title link.
       title.setAttribute( 'href', item.url );
@@ -76,6 +114,9 @@ const displaySearchResults = ( results, documents ) => {
       listItem.setAttribute( 'class', 'search-result' );
       listItem.appendChild( title );
       listItem.appendChild( excerpt );
+      if ( tags ) {
+        listItem.appendChild( tags );
+      }
 
       // Append the list item to the bottom of the results list.
       list.appendChild( listItem );
@@ -142,7 +183,7 @@ export const initializeSearch = async () => {
     const results = index.search( searchTerm ); // Get lunr to perform a search
 
     if ( results.length ) {
-      displaySearchResults( results, documents );
+      displaySearchResults( results, documents, searchTerm );
     } else {
       displayNoResults();
     }

@@ -33,4 +33,11 @@
       border-right: $border;
     }
   }
+
+  &-search {
+    align-items: center;
+    display: flex;
+    font-style: italic;
+    margin: 1rem 0;
+  }
 }
