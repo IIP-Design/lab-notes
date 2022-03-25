@@ -7,6 +7,7 @@ import bash from 'highlight.js/lib/languages/bash';
 import css from 'highlight.js/lib/languages/css';
 import diff from 'highlight.js/lib/languages/diff';
 import dockerfile from 'highlight.js/lib/languages/dockerfile';
+// import graphql from 'highlight.js/lib/languages/graphql';
 import http from 'highlight.js/lib/languages/http';
 import javascript from 'highlight.js/lib/languages/javascript';
 import json from 'highlight.js/lib/languages/json';
@@ -29,6 +30,7 @@ export const initHighlighting = () => {
   hljs.registerLanguage( 'css', css );
   hljs.registerLanguage( 'diff', diff );
   hljs.registerLanguage( 'dockerfile', dockerfile );
+  // hljs.registerLanguage( 'graphql', graphql );
   hljs.registerLanguage( 'http', http );
   hljs.registerLanguage( 'javascript', javascript );
   hljs.registerLanguage( 'json', json );
