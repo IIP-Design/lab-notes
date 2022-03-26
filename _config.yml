@@ -5,16 +5,27 @@ description: A documentation theme for GitHub Pages.
 show_downloads: true
 show_nav: true
 
+collections:
+  examples:
+    output: true
+
+defaults:
+  - scope:
+      path: ''
+      type: examples
+    values:
+      image_credit: Photo by Dan-Cristian Pădureț on Unsplash
+
 remote_theme: IIP-Design/lab-notes
 
 exclude:
-  - "*.gemspec"
-  - "CHANGELOG.md"
-  - "LICENSE.txt"
-  - "README.md"
-  - "package*.json"
-  - "webpack.config.js"
-  - "js/"
+  - '*.gemspec'
+  - 'CHANGELOG.md'
+  - 'LICENSE.txt'
+  - 'README.md'
+  - 'package*.json'
+  - 'webpack.config.js'
+  - 'js/'
 
 markdown: kramdown
 kramdown:

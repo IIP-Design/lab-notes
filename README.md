@@ -2,7 +2,7 @@
 
 Lab Notes is the default theme for all [GPA/LAB](https://github.com/iip-design) documentation pages. It is an extensible markdown-driven Jekyll theme intended for use with GitHub Pages. It has built-in syntax highlighting and three layout options (default, page, and post). Additionally, the theme provides optional widgets for GitHub download links and navigation.
 
-For full documenation or to see Lab Notes in action, take a look at our [docs page](https://iip-design.github.io/lab-notes/).
+For full documentation or to see Lab Notes in action, take a look at our [docs page](https://iip-design.github.io/lab-notes/).
 
 ## Installation
 

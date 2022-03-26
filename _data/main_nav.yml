@@ -17,6 +17,8 @@ nav_list:
   - title: Customization
     url: customize
 
+  - title: Examples
+    url: examples
 
   - title: Changelog
     url: changes
