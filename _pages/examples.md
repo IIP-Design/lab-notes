@@ -1,6 +1,7 @@
 ---
 layout: page_full
 title: Examples
+permalink: '/examples'
 ---
 
 {% assign collection = site.examples %}

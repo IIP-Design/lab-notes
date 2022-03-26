@@ -1,6 +1,7 @@
 ---
 title: Customize This Theme
 layout: page
+permalink: '/customize'
 ---
 
 Beyond the base configuration options discussed in the [configuration section]({{ '/#configuration' | relative_url }}), Lab Notes - like all Jekyll themes - can be customized for your site. Any core theme file can be replaced by an equivalent file locally.

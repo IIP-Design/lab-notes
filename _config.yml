@@ -5,6 +5,9 @@ description: A documentation theme for GitHub Pages.
 show_downloads: true
 show_nav: true
 
+include:
+  - '_pages'
+
 collections:
   examples:
     output: true

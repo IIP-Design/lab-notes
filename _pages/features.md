@@ -1,6 +1,7 @@
 ---
 title: Theme Features
 layout: page
+permalink: '/features'
 ---
 
 ## Layouts

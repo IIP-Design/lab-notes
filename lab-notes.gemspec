@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.name          = "lab-notes"
   spec.version       = "0.5.0"
   spec.authors       = ["Marek Rewers, U.S. Department of State, GPA/LAB"]
-  spec.email         = ["rewersmc@america.gov"]
+  spec.email         = ["rewersmc@fan.gov"]
 
   spec.summary       = "A documentation theme for GitHub Pages."
   spec.homepage      = "https://github.com/iip-design/lab-notes"
